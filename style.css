@@ -1,42 +1,109 @@
 
 
-.container{
+.navbar-custom { 
+    background-color: #0B032D; 
+} 
 
-	padding: 11% 5% 11% 5%;
-	border: 1px solid #eee;
-	border-radius: 10px;
-	margin-top: 10vh;
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: white; 
+} 
+
+
+.colored-div{
+	padding: 11% 5% 1% 5%;
+	margin-bottom: 40px;
+	background-color: #EBEBEB;
+	background-clip: border-box;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
 	
-	background-color: white;
-	opacity: 1;
+}
 
+
+.container{
+	margin-top: 2vh;
+	padding-bottom: 25px;
+	color: #0B032D;
+	background-color: white;
 
 }
 
 
 
-nav {
-	font-family: 'Do Hyeon', sans-serif;
+
+
+img{
+
+	margin: 0 auto 15px auto;
+	display: block;
+	height: 70px;
+	width: 70px;
+
+}
+
+ul{
+	margin: 30px 0 40px 0;
+}
+
+li {
+	margin-top: 10px;
+	list-style-type: none;
+	font-size: 19px;
+}
+
+h1{
+	color: #0B032D;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
-	background-image: url('img/backround.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
+	
+ 	background-image: url("img/backround2.jpg"); /* The image used */
+ 	background-color: #FFFFFF; /* Used if the image is unavailable */
+ 	
+ 	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+ 	background-size: cover; /* Resize the background image to cover the entire container */
+
+
 	height: 100vh;
-	backdrop-filter: blur(1.5px);
 
 }
 
+
+@media only screen and (min-width: 768px) {
+	.container{
+		margin-top: 15vh;
+		border-radius: 10px;
+		margin-top: 15vh;
+		border-radius: 10px;
+		-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    	padding-bottom: 0;
+		
+	}
+	.colored-div{
+		border-left: 1px solid #ccc;
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 0px;
+		padding: 11% 5% 11% 5%;
+		margin-bottom: 0;
+
+
+	}
+
+}
 
 
 @media only screen and (min-width: 992px) {
 	.container{
-		margin-top: 15vh;
-		padding: 60px 20px 60px 20px;
-		width: 750px;
+
+		width: 800px;
 	}
+
 }
+
+
