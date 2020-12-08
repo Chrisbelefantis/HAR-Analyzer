@@ -44,22 +44,22 @@
   			<div class="col-md-5 col-sm-12 align-self-center" >
   				
   				
-	  			<form action="includes/is_in_database.php" method="POST">
+	  			<form action="includes/login_script.php" method="POST">
 					  <div class="form-group">
 					  	 <img src="img/login.png">
 					    <label for="username">Username</label>
-					    <input type="text" class="form-control" placeholder="Admin" id="username" name="username" aria-describedby="usernameHelp">
+					    <input type="text" class="form-control"id="username" name="username" aria-describedby="usernameHelp">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" placeholder="Must have at least 8-characters" class="form-control" id="exampleInputPassword1" name="password">
+					    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
 
 					 </div>
 					 <div class="text-center">	
 					   <button type="submit" class="btn btn-primary btn-sm btn-block" name="Login-button">Login</button>
 				     </div>
 				</form>
-				<br>
+				
 
 					<?php
 
@@ -123,8 +123,8 @@
 							<div id="errorMessage"></div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary" id="registerButton">Register</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-success" id="registerButton">Register</button>
 						</div>
 					</div>
 				</div>
