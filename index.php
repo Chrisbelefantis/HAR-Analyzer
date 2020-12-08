@@ -82,65 +82,13 @@
 
 				<hr>
 					<div class="text-center">	
-					   <button type="submit" class="btn btn-success btn-sm btn-block">Register</button>
+					   <button type="submit" class="btn btn-success btn-sm btn-block" data-toggle = "modal" data-target = "#registerModal">Register</button>
 				   </div>
 				</div>
 
-			
-
-		<a class="navbar-brand" href="#">HAR Analyzer <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-bar-graph" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
-		<path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
-		</svg></a>
-
-	</nav>
+		
 
 
-		<div class="container">
-
-
-			
-			<div class="row">
-				<div class="col-md-7 col-sm-12 text-center colored">
-					<h1 class="display-4">Welcome</h1>
-					<hr>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
-				<div class="col-md-5 col-sm-12 align-self-center" >
-					
-					
-					<form>
-							<div class="form-group">
-								<label for="username">Username</label>
-								<input type="text" class="form-control" placeholder="Admin" id="username" aria-describedby="usernameHelp">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" placeholder="Must have at least 8-characters" class="form-control" id="exampleInputPassword1">
-							</div>
-						<div class="text-center">	
-						<button type="submit" class="btn btn-primary btn-sm btn-block">Login</button>
-					</div>
-					</form>
-					<hr>
-						<div class="text-center">	
-						<button type="submit" class="btn btn-success btn-sm btn-block" data-toggle="modal" data-target="#registerModal">Register</button>
-					</div>
-					</div>
-
-				
-
-
-				</div>
-
-			</div>
 
 			<!-- Here starts the Register Modal -->
 			<div class="modal fade" id="registerModal">
