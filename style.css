@@ -10,10 +10,12 @@
 	background-color: white;
 	opacity: 1;
 
-
 }
 
-
+.modal-content{
+	padding: 3%;
+	border-radius: 10px;
+}
 
 nav {
 	font-family: 'Do Hyeon', sans-serif;
@@ -31,6 +33,26 @@ body {
 
 }
 
+
+.input-container[validated] .input{
+	border-color: #23973e;
+	color: #23973e;
+	background: #f3f3f3;  
+}
+
+.input-container[data-error] .input{
+	border-color: #c92432;
+	color: #c92432;
+	background: #fffafa;  
+}
+
+.input-container[data-error]::after{
+	content: attr(data-error);
+	font-size: 0.8em;
+	color: #c92432;
+	display: block;
+	margin: 1px 0;
+}
 
 
 @media only screen and (min-width: 992px) {
