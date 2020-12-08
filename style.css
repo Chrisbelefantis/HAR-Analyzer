@@ -6,8 +6,10 @@
 
 .navbar-custom .navbar-brand, 
 .navbar-custom .navbar-text { 
+	margin-top: 8px;
     color: white; 
 } 
+
 
 
 .colored-div{
