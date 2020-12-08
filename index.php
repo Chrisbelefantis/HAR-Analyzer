@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,80 @@
 <body>
 
 
-	<nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-center">
+<nav id="navbar" class="navbar navbar-custom justify-content-center">
+
+   <a class="navbar-brand" href="#">HAR Analyzer <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-bar-graph" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
+  <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
+</svg></a>
+
+
+</nav>
+
+
+
+
+  	<div class="container ">
+
+  		<div class="row ">
+  			<div class="col-md-7 col-sm-12 text-center pl-0 pr-0">
+  			 	<div class="colored-div">
+	  				<h1 class="display-4">Welcome</h1>
+	  				<hr>
+	  				<ul>
+	  					<li>Upload your <strong>HTTP Archive</strong> files</li>
+	  					<li>Clean all the unnecessary information</li>
+	  					<li>Monitor your network traffic</li>
+	  				</ul>
+	  				<p class="font-italic">We make sure that all your data is private and cannot be shared with third parties.</p>
+	  			</div>
+  			</div>
+  			<div class="col-md-5 col-sm-12 align-self-center" >
+  				
+  				
+	  			<form action="includes/is_in_database.php" method="POST">
+					  <div class="form-group">
+					  	 <img src="img/login.png">
+					    <label for="username">Username</label>
+					    <input type="text" class="form-control" placeholder="Admin" id="username" name="username" aria-describedby="usernameHelp">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" placeholder="Must have at least 8-characters" class="form-control" id="exampleInputPassword1" name="password">
+
+					 </div>
+					 <div class="text-center">	
+					   <button type="submit" class="btn btn-primary btn-sm btn-block" name="Login-button">Login</button>
+				     </div>
+				</form>
+				<br>
+
+					<?php
+
+						if (isset($_GET['error'])) {
+							if ($_GET['error'] == 'emptyfields') {
+								echo '<p style="text-align:center; color:red;"> Fill in all fields! </p>';
+							}
+							else if ($_GET['error'] == 'unSuccess-Login') {
+								echo '<p style="color:red; text-align:center;">The username and password you entered did not match our files. Please try again later </p>';
+							}
+							else if ($_GET['error'] == 'falsePassword') {
+								echo '<p style="color:red; text-align:center;"> Your password is false. Try again later </p>';
+							}
+							else if ($_GET['error'] == 'falseUsername') {
+								echo '<p style="color:red; text-align:center;"> Your Username is false. Try again later </p>';
+							}
+						}
+
+					?>
+
+				<hr>
+					<div class="text-center">	
+					   <button type="submit" class="btn btn-success btn-sm btn-block">Register</button>
+				   </div>
+				</div>
+
+			
 
 		<a class="navbar-brand" href="#">HAR Analyzer <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-bar-graph" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
