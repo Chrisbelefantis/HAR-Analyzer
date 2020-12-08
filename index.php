@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,20 +44,42 @@
   			<div class="col-md-5 col-sm-12 align-self-center" >
   				
   				
-	  			<form>
+	  			<form action="includes/is_in_database.php" method="POST">
 					  <div class="form-group">
 					  	 <img src="img/login.png">
 					    <label for="username">Username</label>
-					    <input type="text" class="form-control" placeholder="Admin" id="username" aria-describedby="usernameHelp">
+					    <input type="text" class="form-control" placeholder="Admin" id="username" name="username" aria-describedby="usernameHelp">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" placeholder="Must have at least 8-characters" class="form-control" id="exampleInputPassword1">
+					    <input type="password" placeholder="Must have at least 8-characters" class="form-control" id="exampleInputPassword1" name="password">
+
 					 </div>
 					 <div class="text-center">	
-					   <button type="submit" class="btn btn-primary btn-sm btn-block">Login</button>
-				   </div>
+					   <button type="submit" class="btn btn-primary btn-sm btn-block" name="Login-button">Login</button>
+				     </div>
 				</form>
+				<br>
+
+					<?php
+
+						if (isset($_GET['error'])) {
+							if ($_GET['error'] == 'emptyfields') {
+								echo '<p style="text-align:center; color:red;"> Fill in all fields! </p>';
+							}
+							else if ($_GET['error'] == 'unSuccess-Login') {
+								echo '<p style="color:red; text-align:center;">The username and password you entered did not match our files. Please try again later </p>';
+							}
+							else if ($_GET['error'] == 'falsePassword') {
+								echo '<p style="color:red; text-align:center;"> Your password is false. Try again later </p>';
+							}
+							else if ($_GET['error'] == 'falseUsername') {
+								echo '<p style="color:red; text-align:center;"> Your Username is false. Try again later </p>';
+							}
+						}
+
+					?>
+
 				<hr>
 					<div class="text-center">	
 					   <button type="submit" class="btn btn-success btn-sm btn-block">Register</button>
@@ -76,13 +99,11 @@
 
   	</div>
 
-
-
-
-
+  	</script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
 </body>
 </html>
