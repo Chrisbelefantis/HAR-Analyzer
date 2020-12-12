@@ -1,6 +1,6 @@
 <?php
 
-	if (isset($_POST['Login-button'])) {
+	if (isset($_POST['login-button'])) {
 
 		require 'db_connection.php'; // For Variable $conn
 
@@ -12,7 +12,7 @@
 
 		if (empty($username) || empty($pwd)) {
 
-			header("Location: ../index.php?error=emptyfields");
+			header("Location: ../views/auth.php?error=emptyfields");
 			exit();
 		} 
 
@@ -29,37 +29,37 @@
 
 			if ($row = mysqli_fetch_assoc($result)) {
 
-				if ( $row['username'] == $username and $row['password'] == $pwd and $row['isAdmin'] == 0) {
+				if ( $row['username'] == $username and password_verify($pwd, $row['password'])  and $row['isAdmin'] == 0) {
 
 					session_start();
 					$_SESSION['userName'] = $row['username'];
-					header("Location: welcomeUser.php");
+					header("Location: ../views/welcome.php");
 					 //echo " This person is in Database and it isn't Admin "; // new Header from user with session
 				}
-				else if ( $row['username'] == $username and $row['password'] == $pwd and $row['isAdmin'] == 1) {
+				else if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 1) {
 
 					 echo " This person is in Database and it is Admin "; // new Header from administrator with session
 
 				}
-				else if ( $row['username'] == $username and $row['password'] != $pwd ) {
+				else if ( $row['username'] == $username and !password_verify($pwd, $row['password']) ) {
 
-					header("Location: ../index.php?error=falsePassword");
+					header("Location: ../views/auth.php?error=falsePassword");
 					exit();
 				}
-				else if ( $row['username'] != $username and $row['password'] == $pwd ) {
+				else if ( $row['username'] != $username and password_verify($pwd, $row['password']) ) {
 
-					header("Location: ../index.php?error=falseUsername");
+					header("Location: ../views/auth.php?error=falseUsername");
 					exit();
 				}
 			}			
 			else {
-				header("Location: ../index.php?error=unSuccess-Login");
+				header("Location: ../views/auth.php?error=unSuccess-Login");
 				exit();
 			}
 		}
 	}
 	else {
-		header("Location: ../index.php");
+		header("Location: ../views/auth.php");
 		exit();
 	} 
 

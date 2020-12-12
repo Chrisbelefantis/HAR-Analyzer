@@ -66,15 +66,13 @@ h1{
 
 body {
 	
- 	background-image: url("img/backround2.jpg"); /* The image used */
- 	background-color: #FFFFFF; /* Used if the image is unavailable */
- 	
- 	background-position: center; /* Center the image */
- 	background-repeat: no-repeat; /* Do not repeat the image */
- 	background-size: cover; /* Resize the background image to cover the entire container */
+	background: url("../images/backround1.jpg") left bottom no-repeat, url("../images/backround2.jpg") right top no-repeat; 
+	background-color: #FAFAFA; 
+	
+	background-size: initial,initial; /* Resize the background image to cover the entire container */
 
 
-	height: 100vh;
+   height: 100vh;
 
 }
 
