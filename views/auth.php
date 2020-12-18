@@ -14,14 +14,10 @@
 
 
 <nav id="navbar" class="navbar navbar-custom justify-content-center">
-
-   <a class="navbar-brand" href="#">HAR Analyzer <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-bar-graph" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
-  <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/>
-</svg></a>
-
-
-
+    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 35" width="24px" height="35px" fill="currentColor"><title>Analytics</title>
+    <path d="M12,0a12,12,0,0,0,0,24H24V12A12,12,0,0,0,12,0ZM22,22H12A10,10,0,1,1,22,12Z"/>
+    <polygon points="14.49 7.67 10.54 12.95 8.75 11.04 6.44 13.5 5 13.5 5 15.5 7.31 15.5 8.75 13.96 10.71 16.05 14.26 11.33 16.6 15.5 20 15.5 20 13.5 17.77 13.5 14.49 7.67"/>
+    </svg> HAR Analyzer</a>
 </nav>
 
 
@@ -144,10 +140,9 @@
 
 
 
-		
+		<script src="../javaScript/auth.js"></script> 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 </html>
-<script src="../javaScript/auth.js"></script> 

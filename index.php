@@ -11,8 +11,7 @@ switch ($request) {
     case '/har-analyzer/login':
         require __DIR__ . '/views/auth.php';
     case  '/har-analyzer/' :
-        //header("Location: har-analyzer//views/auth.php");
-        require __DIR__ . '/views/auth.php';
+        header("Location: /har-analyzer/views/auth.php");
         break;
     case  __DIR__ .'/har-analyzer' :
         header("Location: har-analyzer//views/auth.php");
