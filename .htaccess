@@ -8,3 +8,8 @@ RewriteEngine On
     Header set Expires "Wed, 12 Jan 1980 05:00:00 GMT"
   </IfModule>
 </FilesMatch>
+
+RewriteBase /har-analyzer/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php [L]

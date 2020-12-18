@@ -39,8 +39,6 @@
 
 
 
-
-
 img{
 
 	margin: 0 auto 15px auto;
@@ -68,33 +66,36 @@ body {
 	
 	background: url("../images/backround1.jpg") left bottom no-repeat, url("../images/backround2.jpg") right top no-repeat; 
 	background-color: #FAFAFA; 
-	
 	background-size: initial,initial; /* Resize the background image to cover the entire container */
-
-
-   height: 100vh;
-
+	height: 100vh;
 }
-
-
-.input-container[validated] .input{
-	border-color: #23973e;
-	color: #23973e;
-	background: #f3f3f3;  
-}
-
-.input-container[data-error] .input{
-	border-color: #c92432;
-	color: #c92432;
-	background: #fffafa;  
-}
-
-.input-container[data-error]::after{
-	content: attr(data-error);
-	font-size: 0.8em;
-	color: #c92432;
+/* 
+.invalid-feedback{
 	display: block;
-	margin: 1px 0;
+	color: white;
+
+}
+
+.invalid-feedback:active{
+	color: red;
+} */
+
+.modal-footer{
+	display: flex;
+	justify-content: center;
+}
+
+#passwordHelp{
+	margin-left: 19px;
+	margin-right: 19px;
+	text-align: center;
+}
+
+#errorMessage{
+	text-align: center;
+}
+.custom {
+    width: 78px !important;
 }
 
 @media only screen and (min-width: 768px) {

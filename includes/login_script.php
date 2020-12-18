@@ -12,7 +12,7 @@
 
 		if (empty($username) || empty($pwd)) {
 
-			header("Location: ../views/auth.php?error=emptyfields");
+			header("Location: ../auth?error=emptyfields");
 			exit();
 		} 
 
@@ -33,8 +33,7 @@
 
 					session_start();
 					$_SESSION['userName'] = $row['username'];
-					header("Location: ../views/welcome.php");
-					 //echo " This person is in Database and it isn't Admin "; // new Header from user with session
+					echo " This person is in Database and it isn't Admin "; // new Header from user with session
 				}
 				else if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 1) {
 
@@ -43,23 +42,23 @@
 				}
 				else if ( $row['username'] == $username and !password_verify($pwd, $row['password']) ) {
 
-					header("Location: ../views/auth.php?error=falsePassword");
+					header("Location: ../auth?error=falsePassword");
 					exit();
 				}
 				else if ( $row['username'] != $username and password_verify($pwd, $row['password']) ) {
 
-					header("Location: ../views/auth.php?error=falseUsername");
+					header("Location: ../auth?error=falseUsername");
 					exit();
 				}
 			}			
 			else {
-				header("Location: ../views/auth.php?error=unSuccess-Login");
+				header("Location: ../auth?error=unSuccess-Login");
 				exit();
 			}
 		}
 	}
 	else {
-		header("Location: ../views/auth.php");
+		header("Location: ../auth");
 		exit();
 	} 
 

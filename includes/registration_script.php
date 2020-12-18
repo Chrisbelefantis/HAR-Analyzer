@@ -24,7 +24,7 @@
         }
                 
     }else{
-        header("Location: ../views/auth.php");
+        header("Location: ../auth");
         exit();
     }
 
