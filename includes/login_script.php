@@ -32,11 +32,13 @@
 				if ( $row['username'] == $username and password_verify($pwd, $row['password'])  and $row['isAdmin'] == 0) {
 
 					session_start();
-					$_SESSION['userName'] = $row['username'];
-					echo " This person is in Database and it isn't Admin "; // new Header from user with session
+					$_SESSION['username'] = $row['username'];
+					$_SESSION['isAdmin'] = 0;
+					header("Location: ../user");
 				}
 				else if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 1) {
-
+					$_SESSION['username'] = $row['username'];
+					$_SESSION['isAdmin'] = 1;
 					 echo " This person is in Database and it is Admin "; // new Header from administrator with session
 
 				}

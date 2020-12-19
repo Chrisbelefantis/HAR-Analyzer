@@ -1,8 +1,19 @@
+
 .navbar-custom { 
-    background-color: #0B032D; 
+    background-color: #0b032d10; 
     float: left;
-    width: 100%;
-} 
+    width: 210px;
+    display: none;
+
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #0B032D;
+    position: relative;
+    display: block;
+    }
+
 
 .navbar-brand {
     color: #fafafa;
@@ -11,6 +22,7 @@
     float: inline-start;
     font-size: 20px;
     transition: 1s;
+    text-align: center;
 }
 
 .navbar-brand.opened{
@@ -34,8 +46,9 @@ li {
 }
 
 .nav-link {
-    color: #fafafa;
-    transition:0.2s;
+    color: #0B032D;
+    font-weight: 500;
+    
 }
 
 .nav-link:hover {
@@ -46,20 +59,20 @@ li {
 
 body {
     background-color: #FAFAFA;
+    
 }
   
-.topnav {
-overflow: hidden;
-background-color: #0B032D;
-position: relative;
+.navigation{
+    font-size: 24px;
+    font-weight: 500;
+    color: #0B032D;
+    padding-left: 19px;
+    padding-top: 5px;
 }
 
 
-  
-.topnav #myLinks {
-display: none;
-}
-  
+
+
 .topnav a {
 color: #fafafa;
 padding: 14px 16px;
@@ -74,9 +87,11 @@ display: block;
 position: absolute;
 right: 0;
 top: 0;
+
 }
 
 #menu-button:hover{
+cursor: pointer;
 color: #0B032D;
 display: block;
 position: absolute;
@@ -101,29 +116,42 @@ right: 0;
 top: 0;
 }
 
+.current-link{
+    
+    border-right: 5px solid white;
+}
 
+@media only screen and (min-width: 768px) {
 
-
-@media only screen and (min-width: 700px) {
-
-    #vertical-nav {
-        visibility: visible;
-    }
-
-    #navbar {
+    #menu-button{
         display: none;
+    }    
+
+    .navbar-brand{
+        text-align: left;
     }
+ 
+    .navbar-custom {
+        height: calc(100vh - 68px);
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .navbar-custom li:last-of-type{
+        margin-top: auto;
+        margin-bottom: 50px;
+        
+    }
+    .current-link{
+        background-color: white;
+        border-right: 5px solid #0B032D;
+    }
+
+    .topnav #myLinks{
+        display: none;
+
+    }
+
 
 }
 
-@media only screen and (max-width: 700px) {
-
-    #vertical-nav {
-        display: none;
-    }
-
-    #navbar {
-        visibility: visible;
-    }
-
-}

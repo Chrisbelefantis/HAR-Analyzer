@@ -16,9 +16,16 @@ switch ($request) {
         header("Location: auth");
         break;
 
+    //Redirect
+    case '/har-analyzer/user':
+        header("Location: user/visualization");
+           
+        break;
+
     case  '/har-analyzer/auth' :
         require __DIR__ . '/views/auth.php';
         break;
+
 
     case '/har-analyzer/auth?error=emptyfields':
         $error = 'emptyfields';
@@ -39,7 +46,15 @@ switch ($request) {
         $error = 'unSuccess-Login';
         require __DIR__ . '/views/auth.php';
         break;
-
+    case '/har-analyzer/user/visualization':
+        require __DIR__ . '/views/user/visualization.php';
+        break;
+    case '/har-analyzer/user/upload':
+        require __DIR__ . '/views/user/upload.php';
+        break;
+    case '/har-analyzer/user/data':
+        require __DIR__ . '/views/user/data.php';
+        break;
 
     default:
         http_response_code(404);
