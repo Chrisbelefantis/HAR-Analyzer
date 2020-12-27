@@ -28,14 +28,14 @@
   }
 ?>
 
-<?php include 'templates/user/header.php'?>
 
 
 
 <?php include 'templates/user/header.php'?>
 
-    <h1>User Data</h1>
-    <br>
+
+<div class="main-container">
+
   <div class="row">
     <div class="col-sm-12">
 
@@ -54,9 +54,29 @@
               <td><?php echo $user; ?></td>
             </tr>
             <tr>
+              <td>Password</td>
+              <td><a href="">Change password</a></td>
+            
+            </tr>
+            <tr>
               <td>Email</td>
               <td><?php echo $email; ?></td>
             </tr>
+            
+          </tbody>
+        </table>
+        <br>
+        <h4> Data Information </h4>
+        <hr>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th >Information</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+          
             <tr>
               <td>Date Of Last Upload</td>
               <td>Something</td>
@@ -67,47 +87,12 @@
             </tr>
           </tbody>
         </table>
-        <br>
-
-          <h4> Change Password-UserName </h4>
-          <hr>
-
-        <form action='../includes/change_password.php' method='POST'>    
-              <div class="table-responsive">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>User-Name</th>
-                        <th>Old Password</th>
-                        <th>Current Password</th>
-                        <th>Confirm Password</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><input  type="text" id="newunm" placeholder="<?php echo $user; ?>" name="newunm" class="form-control"></td>
-                        <td><input type="password" id="oldpwd" placeholder="********" name="oldpwd" class="form-control">
-                          <div class="invalid-feedback" >Your password is false ! </div>
-                        </td>
-                        <td><input type="password" id="curpwd" placeholder="********" name="currentpwd" class="form-control">
-                          <div class="invalid-feedback" >Please check the password format ! </div>
-                        </td>
-                        <td><input type="password" id="cnfpwd" placeholder="********" name="confirmpwd" class="form-control">
-                          <div class="invalid-feedback">Your Confirm password must be the same with Current ! </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              
-              <button type="submit" class="btn btn-primary" name="Change-button">Save Changes</button>
-
-        </form>
-  
+      
     </div>
   </div>
 
+  
+  
 
 
 

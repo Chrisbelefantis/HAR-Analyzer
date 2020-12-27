@@ -1,7 +1,11 @@
-body{
-    color: red;
-}
 
+.main-container{
+    width: 100%;
+    float: right;
+    height: 100%;
+    position: relative; 
+    
+}
 
 h4 {
     color:  #0B032D;
@@ -25,8 +29,7 @@ thead {
 }
 
 button {
-    margin-left: 600px;
-    margin-top:10px;
+    margin: auto;
 }
 
 div {
@@ -34,7 +37,15 @@ div {
 }
 
 
+@media only screen and (min-width: 768px) {
+    .main-container{
+        width: calc(100% - 210px);
+        padding: 50px;
+    }
 
+
+
+}
 
 
 

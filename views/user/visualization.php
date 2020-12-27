@@ -29,13 +29,13 @@
 
 <div id="mapid">
 
-  <div class="backdrop">
+  <!-- <div class="backdrop">
 
-    <!-- <div class="spinner-border" role="status">
+    <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
-    </div> -->
+    </div>
 
-  </div>
+  </div> -->
 
   <div class="alert alert-light alert-dismissible fade show" role="alert">
     This map illustrates the IP locations of all HTTP requests.
@@ -50,5 +50,5 @@
 
 
 
-<script src="../javaScript/user/visualization.js"></script>
+<script src="../javaScript/visualization.js"></script>
 <?php include 'templates/user/footer.php'?>
