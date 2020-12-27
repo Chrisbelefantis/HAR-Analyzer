@@ -1,0 +1,7 @@
+<svg viewBox=" 0 0 24 35 " width="24" height="35" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <path style="vector-effect: non-scaling-stroke;" id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z"/>
+  <line style="vector-effect: non-scaling-stroke;" id="svg_5" y2="5.60721" x2="12.02197" y1="19.66129" x1="11.97803" stroke-width="2" stroke="currentColor" fill="currentColor"/>
+  <line style="vector-effect: non-scaling-stroke;"transform="rotate(45, 14.046, 7.83036)"  id="svg_9" y2="7.83035" x2="17.7442" y1="7.83035" x1="10.3478"  stroke-width="2" stroke="currentColor" fill="currentColor"/>
+  <line style="vector-effect: non-scaling-stroke;"transform="rotate(-45, 9.89311, 7.81259)"  id="svg_11" y2="7.81259" x2="13.51656" y1="7.81259" x1="6.26965"  stroke-width="2" stroke="currentColor" fill="currentColor"/>
+</svg>
+

@@ -1,3 +1,50 @@
-body{
-    color: green;
+#mapid{
+    height: calc(100vh - 68px);
+ 
+}
+
+.spinner-border{
+    position: absolute;
+    z-index: 1000;
+    top: calc(50vh - 68px);
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.backdrop{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.507);
+    z-index: 999;
+    transition: opacity 1s ease-in;
+ 
+}
+
+.backdrop.disabled{
+    opacity: 0;
+
+    
+}
+
+.spinner-border.disabled{
+    display: none;
+}
+
+.alert{
+    text-align: center;
+    margin-bottom: 0px;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    position: absolute;
+    font-size: larger;
+    color: #0B032D;
+   
+  
 }

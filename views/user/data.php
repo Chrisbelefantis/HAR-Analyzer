@@ -20,16 +20,16 @@
   {
     $user = $_SESSION['username'];
     $section = 'data';
-
+   
   }
   else
   {
     header("Location: ../auth");
-
   }
-
-
 ?>
+
+<?php include 'templates/user/header.php'?>
+
 
 
 <?php include 'templates/user/header.php'?>
@@ -107,6 +107,8 @@
   
     </div>
   </div>
+
+
 
 
 <?php include 'templates/user/footer.php'?>
