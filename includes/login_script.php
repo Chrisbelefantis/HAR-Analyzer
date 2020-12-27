@@ -29,11 +29,13 @@
 
 			if ($row = mysqli_fetch_assoc($result)) {
 
-				if ( $row['username'] == $username and password_verify($pwd, $row['password'])  and $row['isAdmin'] == 0) {
+				if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 0) {
 
 					session_start();
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['isAdmin'] = 0;
+					$_SESSION['useremail'] = $row['email'];
+					$_SESSION['password'] = $row['password'];
 					header("Location: ../user");
 				}
 				else if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 1) {

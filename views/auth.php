@@ -102,7 +102,7 @@
 
 								<div class="form-group input-container"  id="emailDiv">
 									<label for="inputEmail">Email address</label>
-									<input type="email" class=" input form-control form-control-md" placeholder="example@email.com" name="email" id="inputEmail" aria-describedby="emailHelp">
+									<input type="email" class=" input form-control form-control-md" placeholder="example@email.com" name="email" id="inputEmail" >
 									<div class="invalid-feedback" id="email-invalid-feedback">Please use a valid email</div>
 								</div>
 

@@ -1,3 +1,40 @@
 body{
     color: red;
 }
+
+
+h4 {
+    color:  #0B032D;
+    text-align: left;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    color:  #0B032D;
+    display: inline-block; 
+    width: 150px; 
+    text-align: center; 
+}
+
+thead {
+    background-color:  #0B032D;
+    color: white;
+}
+
+button {
+    margin-left: 600px;
+    margin-top:10px;
+}
+
+div {
+    text-align: left;
+}
+
+
+
+
+
+

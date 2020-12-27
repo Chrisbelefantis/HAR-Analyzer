@@ -18,8 +18,7 @@ switch ($request) {
 
     //Redirect
     case '/har-analyzer/user':
-        header("Location: user/visualization");
-           
+        header("Location: user/visualization");       
         break;
 
     case  '/har-analyzer/auth' :
