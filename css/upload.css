@@ -1,3 +1,78 @@
-body{
-    color: blue;
+html, body {
+    height: 100%;
+}
+
+.main-container{
+    width: 100%;
+    float: right;
+    height: 100%;
+    position: relative; 
+}
+
+.button-container, .button-container>div{
+    display: flex;
+    justify-content:space-around; 
+}
+
+button:not(#chooseButton){
+    visibility: hidden;
+}
+
+.btn-danger{
+    padding: 12px 12px 6px 12px;
+    border: 2px solid #dc3545;
+}
+
+.btn-danger:hover{
+ background-color: #0b032d10;
+ color: #dc3545;
+}
+
+
+.btn-main{
+    background-color: #0B032D;
+    color: #fafafa;
+    border: 2px solid #0B032D;
+    transition: 0.2s;
+    padding: 12px 12px 6px 12px;
+}
+
+
+.btn-main:hover{
+    color: #0B032D;
+    background-color: #0b032d10;
+    transition: 0.2s;  
+}
+
+.btn{
+    width: 180px;
+    margin: 5px;
+
+}
+.main-button{
+    font-size: 20px;
+    height: 80px;
+    width: 250px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    visibility: initial;
+
+}
+
+
+.table{
+    visibility: hidden;
+    margin: 0px 10px ;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container{
+        width: calc(100% - 210px);
+    }
+
+
+
 }

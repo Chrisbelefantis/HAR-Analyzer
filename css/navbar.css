@@ -17,7 +17,7 @@
 
 .navbar-brand {
     color: #fafafa;
-    margin:0px;
+    margin:0px 0px 0px 0px !important;
     padding: 16px 16px 16.5px 16px !important;
     float: inline-start;
     font-size: 20px;
@@ -149,7 +149,6 @@ top: 0;
 
     .topnav #myLinks{
         display: none;
-
     }
 
 

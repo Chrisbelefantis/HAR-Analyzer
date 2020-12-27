@@ -1,0 +1,8 @@
+<svg viewBox=" 0 0 24 35 " width="24" height="35" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+
+
+  <path id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="8.45424" x2="5.84804" y1="3.6013" x1="1.48529"  fill="none"/>
+  <path id="svg_21" d="m4.63368,8.26166l3.57155,-3.52002l3.794,3.73923l3.794,-3.73923l3.57158,3.52002l-3.794,3.73926l3.794,3.73926l-3.57158,3.52005l-3.794,-3.73926l-3.794,3.73926l-3.57155,-3.52005l3.79397,-3.73926l-3.79397,-3.73926z" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="#000000"/>
+
+</svg>
