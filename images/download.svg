@@ -1,0 +1,8 @@
+<svg viewBox=" 0 0 24 35 " width="24" height="35" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+
+  <path id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z"/>
+  <rect id="svg_5" height="13.83663" width="1.54815" y="4.74303" x="11.12916"  stroke="currentColor" fill="currentColor"/>
+  <rect transform="rotate(45, 13.9352, 16.4026)" id="svg_6" height="7.06345" width="1.54815" y="12.87084" x="13.16112"  stroke="currentColor" fill="currentColor"/>
+  <rect transform="rotate(-45, 10.0164, 16.4026)" id="svg_7" height="7.06345" width="1.54815" y="12.87084" x="9.24235"  stroke="currentColor" fill="currentColor"/>
+
+</svg>
