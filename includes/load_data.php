@@ -14,7 +14,7 @@
     }
 
 
-    include "../../db_connection.php";
+    include "db_connection.php";
 
     $sql = "SELECT serverLocation,COUNT(*) as counter 
             FROM entries 
