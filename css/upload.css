@@ -1,9 +1,24 @@
 
 .main-container{
-    width: 100%;
+    width: calc(100% - 20px);
     float: right;
-    height: calc(90vh - 68px);;
-    position: relative; 
+    height: calc(100vh - 88px);
+    position: relative;    
+}
+
+.grey-border{
+    border: 8px dashed #888888;
+    margin: 10px;
+    color:#888888;
+    font-size: x-large;
+    text-align:center ;
+    transition: 0.2s;
+}
+
+.grey-border.highlight{
+    border-color:#333333;
+    color:#333333;
+    transition: 0.2s;
 }
 
 .button-container, .button-container>div{
@@ -74,14 +89,24 @@ button:not(#chooseButton){
 }
 
 .file-container{
-    overflow: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
-    height: 100%;
+    height: calc(100vh - 155px);
 }
 
 .table{
     visibility: hidden;
-    margin: 0px 10px ;
+}
+
+td.svg-td{
+    padding: 7px 13.5px !important;
+}
+svg.drop-svg{
+    cursor: pointer;
+}
+
+.progress-bar{
+    background-color: #0B032D;
 }
 
 .spinner-border{
@@ -92,9 +117,7 @@ button:not(#chooseButton){
 
 @media only screen and (min-width: 768px) {
     .main-container{
-        width: calc(100% - 210px);
+        width: calc(100% - 230px);
     }
-
-
 
 }
