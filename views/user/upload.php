@@ -26,6 +26,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">File Name</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody id="tbody">
@@ -44,7 +45,7 @@
   <span>Drop Files</span>
 </button>
 
-<button  id='downloadButton' class="btn btn-main ">
+<button  id='downloadButton' disabled class="btn btn-main ">
   <span><svg viewBox=" 0 0 24 35 " width="24" height="35" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
 <path id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z"/>
 <rect id="svg_5" height="13.83663" width="1.54815" y="4.74303" x="11.12916"  stroke="currentColor" fill="currentColor"/>
@@ -63,7 +64,7 @@
   <span>Choose HAR Files</span>
 </button>
 
-<button  class="btn btn-main ">
+<button id='uploadButton' disabled class="btn btn-main ">
   <span><svg viewBox=" 0 0 24 35 " width="24" height="35" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
   <path style="vector-effect: non-scaling-stroke;" id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z"/>
   <line style="vector-effect: non-scaling-stroke;" id="svg_5" y2="5.60721" x2="12.02197" y1="19.66129" x1="11.97803" stroke-width="2.5" stroke="currentColor" fill="currentColor"/>

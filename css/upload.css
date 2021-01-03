@@ -2,7 +2,7 @@
 .main-container{
     width: 100%;
     float: right;
-    height: 100%;
+    height: calc(90vh - 68px);;
     position: relative; 
 }
 
@@ -45,7 +45,21 @@ button:not(#chooseButton){
     width: 180px;
     margin: 5px;
 
+
 }
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+.btn:disabled,
+.btn[disabled]{
+  border: 1px solid #999999;
+  background-color: #0b032d10;
+  color: #666666;
+}
+
 .main-button{
     font-size: 20px;
     height: 80px;
@@ -62,12 +76,18 @@ button:not(#chooseButton){
 .file-container{
     overflow: scroll;
     overflow-x: hidden;
-    height: calc(90vh - 68px);
+    height: 100%;
 }
 
 .table{
     visibility: hidden;
     margin: 0px 10px ;
+}
+
+.spinner-border{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
 }
 
 @media only screen and (min-width: 768px) {
