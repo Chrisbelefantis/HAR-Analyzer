@@ -29,6 +29,7 @@
 
 .hidden{
     visibility: hidden;
+    display: none;
 }
 
 .btn-danger{

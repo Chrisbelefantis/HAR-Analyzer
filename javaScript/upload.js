@@ -3,11 +3,13 @@ var downloadButton = document.getElementById("downloadButton");
 var uploadButton = document.getElementById("uploadButton");
 var hiddenChooseButton=document.getElementById("hiddenChooseButton");
 var dropButton=document.getElementById("dropButton");
+var confirnButton = document.getElementById("confirnButton");
 var mainDiv=document.getElementById("main-div");
 var toBeHidden=document.getElementsByClassName("to-be-hidden");
 var cleanedHarFiles = [];
 var uploadedFiles=0;
 var filesFinished = 0;
+var fileNames;
 
 
 var loadingSpinner=
@@ -46,7 +48,8 @@ chooseButton.addEventListener('click',function(){
 
 //Handles when user inputs files
 hiddenChooseButton.addEventListener('change', (event) => {
-  appendFiles(event.target.files);
+  fileNames = Array.from(event.target.files);
+  appendFiles(fileNames);
 });
 
 
@@ -67,7 +70,7 @@ function appendFiles(files){
         <th class="serial-number" scope=\`row\`>` + number + `</th>
         <td>` + fileName + `</td>
         <td>
-          `+loadingSpinner+`
+          Pending Confirmation
         </td>
         <td>
           `+xsvg+`
@@ -77,23 +80,28 @@ function appendFiles(files){
 
 
   }
+
   chooseButton.classList.remove("main-button");
   filesTable.style.visibility = "initial"; 
-  var buttons=document.getElementsByClassName("btn");
-  buttons[0].classList.remove("hidden");
-  buttons[1].classList.remove("hidden");
-  buttons[2].classList.remove("hidden");
-  buttons[4].classList.remove("hidden");
 
-  setDropFilesButtons()
+  var buttons=document.getElementsByClassName("btn");
+  buttons[2].classList.remove("hidden");
+
+
+  setDropFileButtons()
   mainDiv.classList.remove('grey-border');
   for(const x of toBeHidden){
     x.style.display = "none";
   }
 
-  readFiles();
+  
+
 }
 
+
+confirnButton.addEventListener("click",()=>{
+  alert('confirn');
+});
 
 function readFiles(){
 
@@ -237,15 +245,18 @@ dropButton.addEventListener("click", function(){
 
 
 //Adds event listeners to svgs
-function setDropFilesButtons(){
+function setDropFileButtons(){
   var dropFileButtons= document.getElementsByClassName("drop-svg")
+  let counter = 0;
   for(var button of dropFileButtons){
-    button.addEventListener('click', dropFileSVG)
+    button.addEventListener('click', dropFileSVG.bind(this,counter))
+    counter++;
   }
 }
 
 //Function that deletes element when drop file (svg) clicked
-function dropFileSVG(){
+function dropFileSVG(index){
+  
   $(this).closest('tr').remove();
   uploadedFiles--;
   filesFinished--;
@@ -257,6 +268,9 @@ function dropFileSVG(){
   for(var i=0; i<serialNumbers.length;i++){
     serialNumbers[i].innerHTML=i+1;
   }
+  
+  fileNames.splice(index,1)
+  console.log(fileNames);
 
 }
 
