@@ -26,7 +26,8 @@
     justify-content:space-around; 
 }
 
-button:not(#chooseButton){
+
+.hidden{
     visibility: hidden;
 }
 
@@ -80,7 +81,7 @@ button:not(#chooseButton){
     height: 80px;
     width: 250px;
     position: absolute; 
-    top: 50%;
+    top: 60%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -113,6 +114,10 @@ svg.drop-svg{
     width: 20px;
     height: 20px;
     margin-left: 5px;
+}
+
+.to-be-hidden:nth-child(1){
+    margin-top: 100px;
 }
 
 @media only screen and (min-width: 768px) {
