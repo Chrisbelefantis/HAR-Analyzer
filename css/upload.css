@@ -49,6 +49,7 @@
     border: 2px solid #0B032D;
     transition: 0.2s;
     padding: 12px 12px 6px 12px;
+    
 }
 
 
@@ -91,7 +92,6 @@
 }
 
 .file-container{
-    overflow-y: hidden;
     overflow-x: hidden;
     height: calc(100vh - 155px);
 }
