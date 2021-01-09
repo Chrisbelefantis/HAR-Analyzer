@@ -7,20 +7,30 @@
     
 }
 
+#form-message {
+    color: red;
+    text-align: center;
+}
+
+#Success-message {
+    color: green;
+    text-align: center;
+}
+
+.alert {
+    text-align: center;
+    color: red;
+}
+
 h4 {
     color:  #0B032D;
     text-align: left;
-}
-
-form {
-    text-align: center;
 }
 
 label {
     color:  #0B032D;
     display: inline-block; 
     width: 150px; 
-    text-align: center; 
 }
 
 thead {
@@ -28,14 +38,13 @@ thead {
     color: white;
 }
 
-button {
-    margin: auto;
+svg {
+    padding-bottom: 3px;
 }
 
-div {
-    text-align: left;
+small {
+    text-align: center;
 }
-
 
 @media only screen and (min-width: 768px) {
     .main-container{
