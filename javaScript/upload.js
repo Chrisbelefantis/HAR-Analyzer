@@ -205,7 +205,7 @@ function clearFile(harFile,index){
     requestHeadersCleaned = [];
     responseHeadersCleaned = [];
 
-    var valuableHeaders = ['cache-Control','content-type','pragma','expires','age','host','last-modified'];
+    var valuableHeaders = ['cache-control','content-type','pragma','expires','age','host','last-modified'];
 
     //Cleaning request headers
     for(j=0 ; j<requestHeaders.length ; j++){
