@@ -54,47 +54,6 @@
                   <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                 </svg>               
                 Edit</button></td>
-                <div class="modal fade" id="UserNameModal">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="UserNameModalLabel">Change Your Username</h5>
-                        <button type="button" onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body"> 
-
-                              <form id="username-form">
-                                  <div class="form-group input-container">
-                                    <label for="CurrentUsername">Current Username</label>
-                                    <input id='mail-crnusername' type="text" class=" input form-control form-control-md" name="crnusername">
-                                    <div class="invalid-feedback">Your Current Username is false</div>
-                                  </div>
-                                  
-
-                                  <div class="form-group input-container">
-                                    <label for="NewUsername">New Username</label>
-                                    <input id='mail-newusername' type="text" class=" input form-control form-control-md" name="newusername">
-                                  </div>
-                                 
-                                  <input type="hidden" id="usernamemyInput" value="<?php echo $user; ?>">
-
-                                  <p id="form-usernameMessage"></p>
-                                  <p id="Success-usernameMessage"></p>
-                  
-                              </form>
-
-                              <hr>
-
-                              <div style="text-align:center;">
-                                    <button id='username-submit' type="submit" class="btn btn-primary">Save changes</button>
-                              <div>
-                              
-                          </div>          
-                    </div>
-                  </div>
-                </div>    
               </tr>
               <tr>
                 <td><strong>Email</strong></td>
@@ -109,59 +68,7 @@
                   <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                 </svg>               
                 Change Password</button>
-                <!-- Modal -->
-                <div class="modal fade" id="PasswordModal">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="PasswordModalLabel">Change Your Password</h5>
-                        <button type="button"  onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      
-                          <div class="modal-body">                     
-                              <form id="password-form">
-                                  <div class="form-group input-container">
-                                    <label for="CurrentPassword">Current Password</label>
-                                    <input id='mail-crnpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="crnpwd">
-                                    <div class="invalid-feedback">Your Current Password is false</div>
-                                  </div>
-                                  
-
-                                  <div class="form-group input-container">
-                                    <label for="NewPassword">New Password</label>
-                                    <input id='mail-newpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="newpwd">
-                                    <div class="invalid-feedback" >Please check the password format</div>
-                                  </div>
-
-                                  <div class="form-group input-container">
-                                    <label for="RepeatPassword">Confirm Password</label>
-                                    <input id='mail-rptpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="rptpwd">
-                                    <div class="invalid-feedback">Confirm Password with New password field must be the same</div>
-                                  </div>
-                                  
-                                  <hr>
-                                  <small id="passwordHelp" class="form-text text-muted"> New Password must consist of at least 8 chatacters, one capital letter, one number and a character (e.g. #$*&@).</small>
-                                
-                                  <hr>
-                                  <input type="hidden" id="myInput" value="<?php echo $user; ?>">
-                                  
-                                  <p id="form-message"></p>
-                                  <p id="Success-message"></p> 
-
-                                  
-                                  
-                              </form>
-
-                              <div style="text-align:center;">
-                                    <button id='mail-submit' type="submit" class="btn btn-primary">Save changes</button>
-                              <div>
-                              
-                          </div>          
-                    </div>
-                  </div>
-                </div>         
+  
               </td> 
               </tr>            
             </tbody>
@@ -191,5 +98,116 @@
         
       </div>
     </div>
+
+    <!-- Username Modal -->
+    <div class="modal fade" id="UserNameModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="UserNameModalLabel">Change Your Username</h5>
+            <button type="button" onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"> 
+
+                  <form id="username-form">
+                      <div class="form-group input-container">
+                        <label for="CurrentUsername">Current Username</label>
+                        <input 
+                          id='mail-crnusername' 
+                          type="text" 
+                          class=" input text-center form-control form-control-md"
+                          name="crnusername"
+                          disabled
+                          value = <?php echo "$user" ?>
+                          >
+                      </div>
+                      
+
+                      <div class="form-group input-container">
+                        <label for="NewUsername">New Username</label>
+                        <input 
+                          id='mail-newusername' 
+                          type="text" 
+                          class=" input form-control text-center form-control-md" 
+                          name="newusername">
+                        <div class="text-center invalid-feedback" id="mail-newusername-feedback"></div>
+                      </div>
+                     
+                      <input type="hidden" id="usernamemyInput" value="<?php echo $user; ?>">
+
+                      <p id="form-usernameMessage"></p>
+                      <p id="Success-usernameMessage"></p>
+      
+                  </form>
+
+                  <hr>
+
+                  <div style="text-align:center;">
+                        <button id='username-submit' type="submit" class="btn btn-primary">Save changes</button>
+                  <div>
+                  
+                </div>          
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+     <!-- Password Modal -->
+     <div class="modal fade" id="PasswordModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="PasswordModalLabel">Change Your Password</h5>
+              <button type="button"  onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+                <div class="modal-body">                     
+                    <form id="password-form">
+                        <div class="form-group input-container">
+                          <label for="CurrentPassword">Current Password</label>
+                          <input id='mail-crnpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="crnpwd">
+                          <div class="invalid-feedback">Your Current Password is false</div>
+                        </div>
+                        
+
+                        <div class="form-group input-container">
+                          <label for="NewPassword">New Password</label>
+                          <input id='mail-newpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="newpwd">
+                          <div class="invalid-feedback" >Please check the password format</div>
+                        </div>
+
+                        <div class="form-group input-container">
+                          <label for="RepeatPassword">Confirm Password</label>
+                          <input id='mail-rptpwd' type="password" class=" input form-control form-control-md" placeholder="********" name="rptpwd">
+                          <div class="invalid-feedback">Confirm Password with New password field must be the same</div>
+                        </div>
+                        
+                        <hr>
+                        <small id="passwordHelp" class="form-text text-muted"> New Password must consist of at least 8 chatacters, one capital letter, one number and a character (e.g. #$*&@).</small>
+                      
+                        <hr>
+                        <input type="hidden" id="myInput" value="<?php echo $user; ?>">
+                        
+                        <p id="form-message"></p>
+                        <p id="Success-message"></p> 
+
+                        
+                        
+                    </form>
+
+                    <div style="text-align:center;">
+                          <button id='mail-submit' type="submit" class="btn btn-primary">Save changes</button>
+                    <div>
+                    
+                </div>          
+          </div>
+        </div>
+      </div>       
+    </div>
+  </div>
 
 <?php include 'templates/user/footer.php'?>

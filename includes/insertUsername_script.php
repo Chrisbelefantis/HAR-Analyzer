@@ -1,7 +1,7 @@
 <?php
 
-    $newUsername = $_POST['newusername'];
-    $currentUsername = $_POST['currentusername'];
+    $newUsername = $_POST['newUsername'];
+    $currentUsername = $_POST['currentUsername'];
 
     require 'db_connection.php';
 
@@ -10,6 +10,8 @@
 
         if($run)
         {
+            session_start();
+            $_SESSION['username'] = $newUsername ;
             echo "Successful Changes";
 
         } else {
