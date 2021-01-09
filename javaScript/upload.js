@@ -406,7 +406,16 @@ function unhighlight(e) {
 
 mainDiv.addEventListener('drop', handleDrop, false)
 
-function handleDrop(e) {
-  appendFiles(e.dataTransfer.files)
+function handleDrop(event) {
+
+ 
+  fileNames =  Array.from(event.dataTransfer.files);
+  
+
+  if(fileNames.length>0){
+    chooseButton.classList.add('hidden');
+    appendFiles(fileNames);
+
+  }
 }
 //----------------------------------------------------------//
