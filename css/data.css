@@ -7,6 +7,11 @@
     
 }
 
+#Success-usernameMessage {
+    color: green;
+    text-align: center;
+}
+
 #form-message {
     color: red;
     text-align: center;
@@ -14,6 +19,11 @@
 
 #Success-message {
     color: green;
+    text-align: center;
+}
+
+#form-usernameMessage{
+    color: red;
     text-align: center;
 }
 

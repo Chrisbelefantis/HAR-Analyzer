@@ -41,8 +41,8 @@
         var confirmPwd = $('#mail-rptpwd').val();
         var username = $('#myInput').val(); 
 
-        if (currentPwd === "" || newPwd === "" || confirmPwd === "") {
-
+        if (currentPwd === "" || newPwd === "" || confirmPwd === "" || currentPwd == null || newPwd==null || confirmPwd==null) {
+            
             $("#form-message").text("Fill in all fields !");
 
         } else {
@@ -89,4 +89,51 @@
         }
 
     });
+
+
+    $("#username-submit").click(function() {
+
+        var currentusername = $('#mail-crnusername').val();
+        var newusername = $('#mail-newusername').val();
+        var userName = $('#usernamemyInput').val();
+
+        if (currentusername === "" || newusername === "") {
+
+            $("#form-usernameMessage").text("Fill in all fields !");
+
+        }else {
+
+            $.post("../includes/username_check.php",   
+            {
+                username : currentusername
+            },
+            function(data){
+
+                usernameTrue=(data=="false");
+
+                if (usernameTrue == true && currentusername == userName){
+
+                    $.post("../includes/insertUsername_script.php",
+                    {
+                        newusername : newusername,
+                        currentusername : currentusername
+                    },
+                    function(data) {
+                        $("#Success-usernameMessage").text(data);
+                        document.getElementById('mail-crnusername').value = "";
+                        document.getElementById('mail-newusername').value = "";
+                    });
+
+                } else {
+
+                    $('#mail-crnusername').addClass('is-invalid');
+                    $("#form-usernameMessage").text("Please check all the fields and try again!");
+
+                }
+            });
+
+        }
+
+    });
+
 

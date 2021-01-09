@@ -12,8 +12,6 @@
 
       $username = $_POST['username'];
       $currentPwd = $_POST['currentPwd'];
-     /* $newPwd = $_POST['newPwd'];
-      $confirmPwd = $_POST['confirmPwd'];*/
 
       $sql = "SELECT * FROM users WHERE username = ?;";
       $stmt = mysqli_stmt_init($conn);
