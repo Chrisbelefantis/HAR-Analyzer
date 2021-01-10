@@ -46,7 +46,7 @@
             <tbody>
               <tr>
                 <td><strong>User-Name</strong></td>
-                <td><?php echo $user; ?></td>
+                <td class='usernameField'><?php echo $user; ?></td>
                 <td style="padding:0px;">
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#UserNameModal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -209,5 +209,5 @@
       </div>       
     </div>
   </div>
-
+  <script src="../javascript/data.js"></script>
 <?php include 'templates/user/footer.php'?>

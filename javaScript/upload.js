@@ -36,6 +36,11 @@ var statusPending =
   <span class='status-text'> Pending Confirmation </span>
 `
 
+var statusDuplicate = 
+`
+  <span class='status-text'> Pending Confirmation (Duplicate) </span>
+`
+
 var statusFinished = ` 
 <div  style ='color:green;'>  
   <span class="status-text">Ready</span> 
@@ -88,14 +93,11 @@ function appendFiles(files){
     uploadedFiles++;
     let number = uploadedFiles;
     let fileName = file.name;
-
-    if(fileName.split('.')[1]!='har'){
-      fileName = 'NOT SUPPORTED';
-      color = 'red';
-    }
-
+    var status = statusPending;
+    
     if(existedFileNames.includes(fileName)){
       color = 'red';
+      status = statusDuplicate;
     }
 
 
@@ -106,7 +108,7 @@ function appendFiles(files){
         <td class="filename">` + fileName + `</td>
         <td>
           <div class='file-status'>
-            `+statusPending+`
+            `+status+`
           </div
         </td>
         <td>
@@ -350,7 +352,7 @@ uploadButton.addEventListener("click",()=>{
 
     var tempData = {
       location: '42,12',
-      provider: 'Cosmote'
+      provider: 'vodaphone'
     };
 
     postData(tempData);
@@ -371,7 +373,12 @@ function postData(userData){
     "data": [...cleanedHarFiles]
   };
 
-  console.log(userData);
+  console.log(userData)
+  
+ $.post("../includes/upload_to_database.php",{data: JSON.stringify(userData)},(res)=>{
+    console.log(res);
+
+ });
   
 }
 

@@ -131,6 +131,8 @@ $("#username-submit").click(function() {
                 currentUsernameElement.value = newUsernameValue;
                 newUsernameElement.value = "";
                 newUsernameElement.classList.remove("is-valid");
+                document.querySelector('.usernameField').value = newUsername;
+
             });
         } else {
             $('#mail-crnusername').addClass('is-invalid');
