@@ -231,28 +231,24 @@ function clearFile(harFile,index){
         }
       }
 
-      var url = jsonFile[i].request.url;
-      var cleanedUrl = url.split('/')[2];
+    var url = jsonFile[i].request.url;
+    var cleanedUrl = url.split('/')[2];
 
+    jsonFile[i] = {
+      'request': {
+        'method': jsonFile[i].request.method,
+        'url': cleanedUrl,
+        'headers': requestHeadersCleaned
+      },
+      'response': {
+        'status': jsonFile[i].response.status,
+        'statusText': jsonFile[i].response.statusText,
+        'headers': responseHeadersCleaned
+      },
+      'startedDateTime': jsonFile[i].startedDateTime,
+      'serverIPAddress': jsonFile[i].serverIPAddress,
+      'timings' : {'wait':jsonFile[i].timings.wait}
 
-     
-    
-      jsonFile[i] = {
-        'request': {
-          'method': jsonFile[i].request.method,
-          'url': cleanedUrl,
-          'headers': [requestHeadersCleaned]
-        },
-        'response': {
-          'status': jsonFile[i].response.status,
-          'statusText': jsonFile[i].response.statusText,
-          'headers': [responseHeadersCleaned]
-        },
-        'startedDateTime': jsonFile[i].startedDateTime,
-        'serverIPAddress': jsonFile[i].serverIPAddress,
-        'timings' : {'wait':jsonFile[i].timings.wait}
-
-      }
 
 
     }
@@ -262,7 +258,7 @@ function clearFile(harFile,index){
   filesStatus[index].innerHTML = statusFinished;
   cleanedHarFiles.push(...jsonFile);
 }
-
+}
 downloadButton.addEventListener("click",()=>{
   
   const a = document.createElement("a");
@@ -516,10 +512,10 @@ function findUserData(){
 function postData(userData){
 
 
-  console.log(userData)
-  
-
-  
+  console.log(userData);
+ $.post("../includes/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
+    console.log(res);
+  });
 }
 
 
@@ -571,4 +567,3 @@ function handleDrop(event) {
   }
 }
 //----------------------------------------------------------//
-
