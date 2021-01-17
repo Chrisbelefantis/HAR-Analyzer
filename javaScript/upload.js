@@ -7,6 +7,7 @@ var confirnButton = document.getElementById("confirnButton");
 var mainDiv=document.getElementById("main-div");
 var toBeHidden=document.getElementsByClassName("to-be-hidden");
 var cleanedHarFiles = [];
+var ips_to_locations={};
 var uploadedFiles=0;
 var filesFinished = 0;
 var fileNames;
@@ -173,14 +174,14 @@ function readFiles(){
         reader.onload = function(e) {  
           
       
-          clearFile(e.target.result,index);
-
+          clearFile(e.target.result,index)
+         
           filesFinished++;
           if(filesFinished==uploadedFiles){
             uploadButton.disabled = false;
             downloadButton.disabled = false;
-
-          }
+        
+          };
         }
 
         reader.readAsText(file, "UTF-8");
@@ -194,37 +195,41 @@ function readFiles(){
 
 
 function clearFile(harFile,index){
-  var jsonFile= JSON.parse(harFile);
-  
-  //Remove all exept entries
-  jsonFile = jsonFile.log.entries;
+ 
+    document.querySelectorAll(".status-text")[index].innerHTML='Cleaning' ;
 
-  for(i=0;i<jsonFile.length;i++){
 
-    requestHeaders = [...jsonFile[i].request.headers];
-    responseHeaders = [...jsonFile[i].response.headers];
 
-    requestHeadersCleaned = [];
-    responseHeadersCleaned = [];
+    var jsonFile= JSON.parse(harFile);
+    
+    //Remove all exept entries
+    jsonFile = jsonFile.log.entries;
+    for(i=0;i<jsonFile.length;i++){
 
-    var valuableHeaders = ['cache-control','content-type','pragma','expires','age','host','last-modified'];
+      requestHeaders = [...jsonFile[i].request.headers];
+      responseHeaders = [...jsonFile[i].response.headers];
 
-    //Cleaning request headers
-    for(j=0 ; j<requestHeaders.length ; j++){
-      if(valuableHeaders.includes(requestHeaders[j].name.toLowerCase())){
-        requestHeadersCleaned.push(requestHeaders[j]);
+      requestHeadersCleaned = [];
+      responseHeadersCleaned = [];
+
+      var valuableHeaders = ['cache-control','content-type','pragma','expires','age','host','last-modified'];
+
+      //Cleaning request headers
+      for(j=0 ; j<requestHeaders.length ; j++){
+        if(valuableHeaders.includes(requestHeaders[j].name.toLowerCase())){
+          requestHeadersCleaned.push(requestHeaders[j]);
+        }
       }
-    }
 
 
 
-    //Cleaning response headers
-    for(j=0 ; j<responseHeaders.length ; j++){
-      
-      if(valuableHeaders.includes(responseHeaders[j].name.toLowerCase())){
-        responseHeadersCleaned.push(responseHeaders[j]);
+      //Cleaning response headers
+      for(j=0 ; j<responseHeaders.length ; j++){
+        
+        if(valuableHeaders.includes(responseHeaders[j].name.toLowerCase())){
+          responseHeadersCleaned.push(responseHeaders[j]);
+        }
       }
-    }
 
     var url = jsonFile[i].request.url;
     var cleanedUrl = url.split('/')[2];
@@ -244,16 +249,16 @@ function clearFile(harFile,index){
       'serverIPAddress': jsonFile[i].serverIPAddress,
       'timings' : {'wait':jsonFile[i].timings.wait}
 
+
+
     }
 
 
-
-  }
   var filesStatus = document.querySelectorAll(".file-status");
   filesStatus[index].innerHTML = statusFinished;
   cleanedHarFiles.push(...jsonFile);
 }
-
+}
 downloadButton.addEventListener("click",()=>{
   
   const a = document.createElement("a");
@@ -345,43 +350,173 @@ function dropFileSVG(event){
 }
 
 
-
 uploadButton.addEventListener("click",()=>{
+
+
+  //Show Modal
+  document.querySelector('#uploadModal .spinner-border').style.display = 'block';
+  document.querySelector('#uploadModal .modal-text').innerHTML ='';
+  document.querySelector('.close-upload-modal').disabled= true;
+
+
+  $('#uploadModal').modal({backdrop: 'static', keyboard: false})  
+  $("#uploadModal").modal('show');
+
+
   
-  var userData = findUserData();
+  getUploadData()
+  .then(result=>{
+    var userData = findUserData();
 
     var tempData = {
       location: '42,12',
-      provider: 'vodaphone'
+      provider: 'vodaphone',
+      data: result.uploadData
     };
 
     postData(tempData);
 
+    document.querySelector('#uploadModal .modal-text').innerHTML = `
+      You just uploaded <strong> ${tempData.data.length} 
+      different entries </strong> and <strong> ${result.uniqueIPs} 
+      new server locations </strong> to the current session found.
+      `
+    document.querySelector('#uploadModal .spinner-border').style.display = 'none';
+    document.querySelector('.close-upload-modal').disabled= false;
+
+
+  })
+  .catch(err=>{
+    document.querySelector('#uploadModal .modal-text').innerHTML = `
+      An Error has been occured. Please try again later.
+      `
+    document.querySelector('#uploadModal .spinner-border').style.display = 'none';
+    document.querySelector('.close-upload-modal').disabled= false;
+    console.log(err);
+  });
+  
+
 });
+
+
+function getUploadData(){
+  return new Promise((resolve,reject)=>{
+    uploadData = [...cleanedHarFiles]
+
+    let queries=0;
+    var current_ips = [];
+    var api_calls = [];
+
+    for(let i=0; i<uploadData.length; i++){
+
+        let ipAddress = uploadData[i].serverIPAddress;
+
+        //In case there is a IPv6 address
+        //they brackets that should be removed
+        if(ipAddress[0]==='['){   
+          ipAddress = ipAddress.slice(1,-1);
+        }
+      
+        if(!ips_to_locations.hasOwnProperty(ipAddress) && !current_ips.includes(ipAddress)){
+          current_ips.push(ipAddress);
+          
+          queries++;
+          api_calls.push(
+
+            $.ajax({
+              type: 'GET',
+              url: "https://freegeoip.app/json/"+ipAddress,
+              crossDomain: true,
+              dataType: 'json',
+              success: function(data){
+                serverlocation = data.latitude+','+data.longitude;
+                ips_to_locations[ipAddress] =serverlocation;
+                uploadData[i].serverLocation = serverlocation;
+              }
+           })
+          );
+            
+        }
+    }
+      $.when(...api_calls)
+      .then((data)=>{
+        for(let i=0; i<uploadData.length; i++){
+          let ipAddress = uploadData[i].serverIPAddress;
+          if(ipAddress[0]==='['){
+            ipAddress = ipAddress.slice(1,-1);
+          }
+         
+          if(!uploadData[i].hasOwnProperty('serverLocation')){
+            uploadData[i].serverLocation = ips_to_locations[ipAddress];
+          }
+
+        }
+        console.log(uploadData.length,queries);
+        const result={
+          uploadData: uploadData,
+          uniqueIPs: queries
+        };
+
+        resolve(result);
+      })
+      .catch((err)=>{
+        reject(err);
+      });
+  });
+
+}
+
 
 
 function findUserData(){
 
+    var latitude;
+    var longitude;
+    var location;
+    var provider;
+    var newprovider = "";
+
+    $.getJSON('https://ipapi.co/json/', function(data){
+
+      latitude = data.latitude;
+      longitude = data.longitude;
+      provider = data.org;
+
+      console.log(data);
+      location = latitude.toFixed(0) + "," + longitude.toFixed(0);
+      var i;
+
+      var userData = {
+        location : location,
+        provider : provider
+      }
+
+      console.log(newprovider);
+      console.log(location);
+      return userData;
+      
+
+    });
+
+    
 
 }
 
 function postData(userData){
 
-  var userData = {
-    "location": userData.location,
-    "provider": userData.provider,
-    "data": [...cleanedHarFiles]
-  };
 
   console.log(userData);
  $.post("../includes/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
     console.log(res);
-
- });
-  
+  });
 }
 
 
+document.querySelector('.close-upload-modal').addEventListener('click',()=>{
+
+  dropButton.click();
+
+});
 
 
 //--------------------Functions For Drag n Drop----------------------//

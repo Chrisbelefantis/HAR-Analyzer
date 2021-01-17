@@ -88,12 +88,12 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     visibility: initial;
-
 }
 
 .file-container{
     overflow-x: hidden;
     height: calc(100vh - 155px);
+ 
 }
 
 .table{
@@ -120,6 +120,13 @@ svg.drop-svg{
 .to-be-hidden:nth-child(1){
     margin-top: 100px;
 }
+
+#uploadModal .spinner-border{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 @media only screen and (min-width: 768px) {
     .main-container{
