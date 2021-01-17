@@ -233,12 +233,12 @@ function clearFile(harFile,index){
       'request': {
         'method': jsonFile[i].request.method,
         'url': cleanedUrl,
-        'headers': [requestHeadersCleaned]
+        'headers': requestHeadersCleaned
       },
       'response': {
         'status': jsonFile[i].response.status,
         'statusText': jsonFile[i].response.statusText,
-        'headers': [responseHeadersCleaned]
+        'headers': responseHeadersCleaned
       },
       'startedDateTime': jsonFile[i].startedDateTime,
       'serverIPAddress': jsonFile[i].serverIPAddress,
@@ -373,9 +373,8 @@ function postData(userData){
     "data": [...cleanedHarFiles]
   };
 
-  console.log(userData)
-  
- $.post("../includes/upload_to_database.php",{data: JSON.stringify(userData)},(res)=>{
+  console.log(userData);
+ $.post("../includes/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
     console.log(res);
 
  });
