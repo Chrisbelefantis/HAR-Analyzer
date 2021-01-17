@@ -13,6 +13,11 @@
 
   }
 
+  if($_SESSION['isAdmin']==1){
+
+    header("Location: ../accessDenied.html");
+  }
+
 
 ?>
 
@@ -142,5 +147,5 @@
 </div>
 
 
-<script src="../javaScript/upload.js"></script>
+<script src="../javaScript/user/upload.js"></script>
 <?php include 'templates/user/footer.php'?>

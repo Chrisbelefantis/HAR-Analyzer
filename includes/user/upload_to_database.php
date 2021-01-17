@@ -1,9 +1,11 @@
 <?php
-    include "db_connection.php";
+    
+    include "../db_connection.php";
     session_start();
 
     $userData = json_decode($_POST['userData']);
 
+    
     $user_email = $_SESSION['useremail'];
     $user_location = $userData->location;
     $user_provider = $userData->provider;
@@ -26,7 +28,7 @@
         $provider_id = $conn->insert_id;
     }
 
-
+    
     $sql_insert_upload = "INSERT INTO uploads(`id`, `userEmail`, `uploadDatetime`, `location`, `provider`) 
                         VALUES (NULL, \"$user_email\",NOW(),\"$user_location\", $provider_id) ";
     $run = mysqli_query($conn, $sql_insert_upload );
@@ -41,6 +43,7 @@
         $url=$entry->request->url;
         $res_status=$entry->response->status;
         $res_statusText=$entry->response->statusText;
+        $res_serverLocation = $entry->serverLocation;
         //response-headers-depended vars
         $res_age="NULL";  
         $res_TTL="NULL";  //
@@ -126,7 +129,7 @@
         $time=(new DateTime($datetime))->format('H:i:s');
 
        
-        $inserts[]="($last_upload_id, \"40.39055167978466, -3.6716079181139705\",  $wait, \"$method\", \"$url\", $res_status, $res_statusText, $res_age, $res_TTL, $res_contentType, $res_cacheability, $res_isCached, $res_hasMinFresh, $res_hasMaxStale, $day, \"$time\")";
+        $inserts[]="($last_upload_id, \"$res_serverLocation\",  $wait, \"$method\", \"$url\", $res_status, $res_statusText, $res_age, $res_TTL, $res_contentType, $res_cacheability, $res_isCached, $res_hasMinFresh, $res_hasMaxStale, $day, \"$time\")";
 
     }
 

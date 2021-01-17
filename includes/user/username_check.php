@@ -1,5 +1,5 @@
 <?php
-require 'db_connection.php';
+require '../db_connection.php';
 $username=$_POST['username'];
 
 $sql = "SELECT EXISTS(SELECT * FROM users WHERE username=\"$username\")";

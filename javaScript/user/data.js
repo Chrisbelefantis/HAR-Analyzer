@@ -38,7 +38,7 @@ $("#mail-submit").click(function() {
         
         $("#form-message").text("Fill in all fields !");
     } else {
-        $.post("../includes/password_check.php", 
+        $.post("../includes/user/password_check.php", 
         {
          currentPwd:currentPwd,
          newPwd:newPwd,
@@ -50,7 +50,7 @@ $("#mail-submit").click(function() {
             if(data.isValid) {
                 
                 if (newPwd == confirmPwd && ($('#mail-newpwd').hasClass('is-valid'))) {
-                    $.post("../includes/insertPassword_script.php", 
+                    $.post("../includes/user/insertPassword_script.php", 
                     {
                         newPwd:newPwd,
                         username:username
@@ -79,7 +79,7 @@ $("#mail-submit").click(function() {
 var newUsername = document.querySelector('#mail-newusername');
 newUsername.addEventListener("change",event=>{
     username = event.target.value;
-    $.post("../includes/username_check.php",{username:username},function(data){
+    $.post("../includes/user/username_check.php",{username:username},function(data){
         usernameAvailable=(data=="true");
 
         if(username===''){
@@ -120,7 +120,7 @@ $("#username-submit").click(function() {
     else {
         
         if (newUsernameElement.classList.contains('is-valid')){
-            $.post("../includes/insertUsername_script.php",
+            $.post("../includes/user/insertUsername_script.php",
             {
                 newUsername : newUsernameValue,
                 currentUsername : currentUsernameValue

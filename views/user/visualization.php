@@ -21,6 +21,13 @@
     header("Location: ../auth");
 
   }
+
+  if($_SESSION['isAdmin']==1){
+
+    header("Location: ../accessDenied.html");
+  }
+
+
 ?>
 
 
@@ -50,5 +57,5 @@
 
 
 
-<script src="../javaScript/visualization.js"></script>
+<script src="../javaScript/user/visualization.js"></script>
 <?php include 'templates/user/footer.php'?>

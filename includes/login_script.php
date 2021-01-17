@@ -39,9 +39,11 @@
 					header("Location: ../user");
 				}
 				else if ( $row['username'] == $username and password_verify($pwd, $row['password']) and $row['isAdmin'] == 1) {
+					session_start();
 					$_SESSION['username'] = $row['username'];
+					$_SESSION['useremail'] = $row['email'];
 					$_SESSION['isAdmin'] = 1;
-					 echo " This person is in Database and it is Admin "; // new Header from administrator with session
+					header("Location: ../admin");
 
 				}
 				else if ( $row['username'] == $username and !password_verify($pwd, $row['password']) ) {

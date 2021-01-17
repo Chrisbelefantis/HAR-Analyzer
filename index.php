@@ -18,7 +18,12 @@ switch ($request) {
 
     //Redirect
     case '/har-analyzer/user':
-        header("Location: user/visualization");       
+        header("Location: user/upload");       
+        break;
+
+    //Redirect
+    case '/har-analyzer/admin':
+        header("Location: admin/data-visualization");       
         break;
 
     case  '/har-analyzer/auth' :
@@ -53,6 +58,22 @@ switch ($request) {
         break;
     case '/har-analyzer/user/data':
         require __DIR__ . '/views/user/data.php';
+        break;
+
+    case '/har-analyzer/admin/display-informations':
+        require __DIR__ . '/views/admin/display-informations.php';
+        break;
+    case '/har-analyzer/admin/response-times':
+        require __DIR__ . '/views/admin/response-times.php';
+        break;
+    case '/har-analyzer/admin/headers-analysis':
+        require __DIR__ . '/views/admin/headers-analysis.php';
+        break;
+    case '/har-analyzer/admin/data-visualization':
+        require __DIR__ . '/views/admin/data-visualization.php';
+        break;
+    case '/har-analyzer/accessDenied':
+        require __DIR__ . '/views/accessDenied.html';
         break;
 
     default:

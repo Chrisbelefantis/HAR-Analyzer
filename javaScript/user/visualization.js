@@ -51,7 +51,7 @@ let myHeatmap = new heatmap();
 mymap.addLayer(myHeatmap.getLayer());
 
 
-$.get("../includes/load_data.php",(data,status)=>{
+$.get("../includes/user/load_data.php",(data,status)=>{
 
     if(status==='success'){
 

@@ -14,8 +14,12 @@
       
      
         if (mysqli_query($conn, $sql)) {
-
-            echo "New record created successfully";
+            session_start();
+			$_SESSION['username'] =$_POST['username'];
+			$_SESSION['isAdmin'] = 0;
+			$_SESSION['useremail'] =  $_POST['email'];
+			$_SESSION['password'] =  $_POST['password'];
+			header("Location: ../user");
 
         } else {
 

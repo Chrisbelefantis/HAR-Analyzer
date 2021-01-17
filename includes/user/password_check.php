@@ -1,6 +1,6 @@
 <?php
 
-      require 'db_connection.php';
+      require '../db_connection.php';
 
       class response{
          public $isValid;

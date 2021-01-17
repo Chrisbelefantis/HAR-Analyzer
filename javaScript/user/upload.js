@@ -373,11 +373,11 @@ uploadButton.addEventListener("click",()=>{
         provider: data.provider,
         data: result.uploadData
       };
-  
-      postData(tempData);
+ 
+      // postData(tempData);
   
       document.querySelector('#uploadModal .modal-text').innerHTML = `
-        You just uploaded <strong> ${tempData.data.length} 
+        You just uploaded <strong> ${result.uploadData.length} 
         different entries </strong> and <strong> ${result.uniqueIPs} 
         new server locations </strong> to the current session found.
         `
@@ -513,7 +513,7 @@ function postData(userData){
 
 
   console.log(userData);
- $.post("../includes/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
+  $.post("../includes/user/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
     console.log(res);
   });
 }
