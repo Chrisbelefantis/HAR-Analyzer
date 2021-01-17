@@ -33,6 +33,6 @@
                         VALUES (\"$user_email\",NOW(),\"$user_location\", $provider_id) ";
     $run = mysqli_query($conn, $sql_insert_upload );
     
-    2
+    
 
 ?>

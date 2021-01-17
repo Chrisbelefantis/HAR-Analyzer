@@ -120,5 +120,27 @@
 
 </div>
 
+
+<div class="modal" id="uploadModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Data Uploading</h5>
+      </div>
+      <div class="modal-body">
+      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <span class='modal-text'></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close-upload-modal btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script src="../javaScript/upload.js"></script>
 <?php include 'templates/user/footer.php'?>
