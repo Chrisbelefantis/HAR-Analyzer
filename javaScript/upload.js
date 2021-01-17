@@ -362,6 +362,35 @@ uploadButton.addEventListener("click",()=>{
 
 function findUserData(){
 
+    var latitude;
+    var longitude;
+    var location;
+    var provider;
+    var newprovider = "";
+
+    $.getJSON('https://ipapi.co/json/', function(data){
+
+      latitude = data.latitude;
+      longitude = data.longitude;
+      provider = data.org;
+
+      console.log(data);
+      location = latitude.toFixed(0) + "," + longitude.toFixed(0);
+      var i;
+
+      var userData = {
+        location : location,
+        provider : provider
+      }
+
+      console.log(newprovider);
+      console.log(location);
+      return userData;
+      
+
+    });
+
+    
 
 }
 
