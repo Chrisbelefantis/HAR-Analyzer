@@ -367,27 +367,32 @@ uploadButton.addEventListener("click",()=>{
   $("#uploadModal").modal('show');
 
 
-  
   getUploadData()
   .then(result=>{
-    var userData = findUserData();
+    findUserData()
+    .then(data=>{
 
-    var tempData = {
-      location: '42,12',
-      provider: 'vodaphone',
-      data: result.uploadData
-    };
+      var tempData = {
+        location: data.location,
+        provider: data.provider,
+        data: result.uploadData
+      };
+  
+      postData(tempData);
+  
+      document.querySelector('#uploadModal .modal-text').innerHTML = `
+        You just uploaded <strong> ${tempData.data.length} 
+        different entries </strong> and <strong> ${result.uniqueIPs} 
+        new server locations </strong> to the current session found.
+        `
+      document.querySelector('#uploadModal .spinner-border').style.display = 'none';
+      document.querySelector('.close-upload-modal').disabled= false;
+  
 
-    postData(tempData);
+    })
+    
 
-    document.querySelector('#uploadModal .modal-text').innerHTML = `
-      You just uploaded <strong> ${tempData.data.length} 
-      different entries </strong> and <strong> ${result.uniqueIPs} 
-      new server locations </strong> to the current session found.
-      `
-    document.querySelector('#uploadModal .spinner-border').style.display = 'none';
-    document.querySelector('.close-upload-modal').disabled= false;
-
+    
 
   })
   .catch(err=>{
@@ -473,12 +478,12 @@ function getUploadData(){
 
 
 function findUserData(){
-
+  return new Promise((resolve,reject)=>{
     var latitude;
     var longitude;
     var location;
     var provider;
-    var newprovider = "";
+
 
     $.getJSON('https://ipapi.co/json/', function(data){
 
@@ -486,23 +491,25 @@ function findUserData(){
       longitude = data.longitude;
       provider = data.org;
 
-      console.log(data);
-      location = latitude.toFixed(0) + "," + longitude.toFixed(0);
-      var i;
-
+      location = latitude.toFixed(4) + "," + longitude.toFixed(4);
+     
       var userData = {
         location : location,
         provider : provider
       }
 
-      console.log(newprovider);
-      console.log(location);
-      return userData;
+      if(data){
+        resolve(userData);
+      }
+      else{
+        reject('Error');
+      }
       
 
     });
 
-    
+
+  }) 
 
 }
 
