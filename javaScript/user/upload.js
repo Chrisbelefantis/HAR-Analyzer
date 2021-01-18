@@ -253,12 +253,13 @@ function clearFile(harFile,index){
 
     }
 
-
+  }
   var filesStatus = document.querySelectorAll(".file-status");
   filesStatus[index].innerHTML = statusFinished;
   cleanedHarFiles.push(...jsonFile);
+  
 }
-}
+
 downloadButton.addEventListener("click",()=>{
   
   const a = document.createElement("a");
@@ -363,10 +364,8 @@ uploadButton.addEventListener("click",()=>{
   $("#uploadModal").modal('show');
 
 
-  getUploadData()
-  .then(result=>{
-    findUserData()
-    .then(data=>{
+  getUploadData().then(result=>{
+    findUserData().then(data=>{
 
       var tempData = {
         location: data.location,
@@ -374,8 +373,8 @@ uploadButton.addEventListener("click",()=>{
         data: result.uploadData
       };
  
-      // postData(tempData);
-  
+      postData(tempData);
+
       document.querySelector('#uploadModal .modal-text').innerHTML = `
         You just uploaded <strong> ${result.uploadData.length} 
         different entries </strong> and <strong> ${result.uniqueIPs} 
@@ -510,7 +509,6 @@ function findUserData(){
 }
 
 function postData(userData){
-
 
   console.log(userData);
   $.post("../includes/user/upload_to_database.php",{userData: JSON.stringify(userData)},(res)=>{
