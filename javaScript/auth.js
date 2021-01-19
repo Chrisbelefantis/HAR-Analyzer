@@ -17,6 +17,7 @@ document.getElementById("inputEmail").addEventListener("change",event=>{
     
     email = event.target.value;
     $.post("includes/email_check.php", { email:email}, function(data){
+        
         emailAvailable=(data=="true");
     
         if (!emailRegEx.test(email)){

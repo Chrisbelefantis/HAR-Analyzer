@@ -15,10 +15,14 @@
 
 
     include "../db_connection.php";
+    session_start();
+    $userEmail = $_SESSION['useremail'];
 
-    $sql = "SELECT serverLocation,COUNT(*) as counter 
-            FROM entries 
-            GROUP BY serverLocation";
+    $sql = "SELECT serverLocation,uploads.userEmail, COUNT(*) as counter 
+        FROM entries inner JOIN uploads 
+        on entries.upload = uploads.id
+        WHERE uploads.userEmail = \"$userEmail\"
+        GROUP BY serverLocation";
    
     $query_result = mysqli_query($conn,$sql);
     

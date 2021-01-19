@@ -20,7 +20,7 @@ class heatmap{
             "radius":2,
             "maxOpacity": .8,      
             "scaleRadius": true,        
-            "useLocalExtrema": true,         
+            "useLocalExtrema": false,         
             latField: 'lat',    
             lngField: 'lng',
             valueField: 'count'
@@ -51,17 +51,20 @@ let myHeatmap = new heatmap();
 mymap.addLayer(myHeatmap.getLayer());
 
 
-$.get("../includes/user/load_data.php",(data,status)=>{
+$.get("../includes/user/load_data.php" ,(data,status)=>{
 
+    
     if(status==='success'){
+
+        data = JSON.parse(data);
 
         // backdrop.classList.add('disabled');
         // spinner.classList.add('disabled');
 
-        data = JSON.parse(data);
-
+        let max = Math.max.apply(Math, data.map(function(o) { return o.count; }))
+ 
         myHeatmap.setData({
-            max: 8,
+            max: max,
             data: data
         });
 

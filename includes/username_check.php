@@ -1,9 +1,8 @@
 <?php
-
 require 'db_connection.php';
-$email=$_POST['email'];
+$username=$_POST['username'];
 
-$sql = "SELECT EXISTS(SELECT * FROM users WHERE email=\"$email\")";
+$sql = "SELECT EXISTS(SELECT * FROM users WHERE username=\"$username\")";
 $result=mysqli_query($conn, $sql);
 
 $result = $result->fetch_array();
