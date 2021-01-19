@@ -69,7 +69,7 @@
                     break;
                 case "cache-control":
                     //cache-control is seperated
-                    $cc=array_map("trim",explode(",", $header->value));
+                    $cc=array_map("trim",preg_split('/(,|;)/', $header->value));
                     foreach($cc as $cc_value){
                         switch($cc_value){
                             case "public":
@@ -132,6 +132,8 @@
 
     }
 
+    
+    
     $inserts_piecies=array_chunk($inserts,6500);
     $insert_entries_stmt=array();
     for($i=0; $i<count($inserts_piecies);$i++ ){
@@ -144,7 +146,7 @@
             echo "Error:" . $conn->error;
         }
     }
-
+    
     
 
 
