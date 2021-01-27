@@ -125,10 +125,14 @@
         if($res_cacheability!="NULL"){$res_cacheability="\"$res_cacheability\"";}//not to insert "NULL"
         $res_statusText=($res_statusText=="")?"\"void\"":"\"$res_statusText\"";
         $day=date( "N", strtotime($datetime)); 
-        $time=(new DateTime($datetime))->format('H:i:s');
+        $hour=(new DateTime($datetime))->format('H');
+        $minutes = (new DateTime($datetime))->format('i');
 
+        if($minutes>30){
+            $hour = $hour + 1;
+        }
        
-        $inserts[]="($last_upload_id, \"$res_serverLocation\",  $wait, \"$method\", \"$url\", $res_status, $res_statusText, $res_age, $res_TTL, $res_contentType, $res_cacheability, $res_isCached, $res_hasMinFresh, $res_hasMaxStale, $day, \"$time\")";
+        $inserts[]="($last_upload_id, \"$res_serverLocation\",  $wait, \"$method\", \"$url\", $res_status, $res_statusText, $res_age, $res_TTL, $res_contentType, $res_cacheability, $res_isCached, $res_hasMinFresh, $res_hasMaxStale, $day, \"$hour\")";
 
     }
 
