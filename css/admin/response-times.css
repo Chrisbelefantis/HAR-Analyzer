@@ -65,7 +65,7 @@
 
 .main-container h4{
     color: #0B032D;
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: lighter;
     
 }
@@ -133,6 +133,7 @@
     }
     .controls-container{
         margin: auto;
+        
     }
     .chart-container {
         height: 800px;
