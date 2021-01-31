@@ -1,3 +1,148 @@
-h3{
-    color: blueviolet;
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    height: calc(100vh - 68px);
+    overflow-y: auto;
+    
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: auto;
+    width: 100%;
+    margin: 0 auto 90px auto;
+  }
+  
+
+
+.param-choice{
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.btn{
+    font-weight: bolder;
+    color: #0B032D;
+    background-color: #0b032d10;
+    border-color:#0b032d10;
+    
+}
+
+.btn.selected{
+    color: white;
+    background-color:#0B032D;
+    
+}
+
+.btn:hover{
+    color: white;
+    background-color:#0B032D;
+    
+    
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+ 
+}
+
+.btn.refresh-btn{
+   
+    font-weight: lighter;
+    color: white;
+    background-color: #0B032D;
+    width: fit-content;
+    margin: 15px auto auto auto;
+
+}
+
+
+.main-container h4{
+    color: #0B032D;
+    margin-top: 15px;
+    font-weight: lighter;
+    
+}
+
+
+.controls-container{
+    padding-bottom: 5px;
+
+}
+
+
+.chart-title{
+    text-align: center;
+    margin: 0 auto 0 auto;
+    
+}
+
+.chart-samples{
+    margin: auto;
+    font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container{
+        width: calc(100% - 210px);
+        position: fixed; 
+        left: 210px;
+        padding-bottom: 20px;
+    }
+
+    .chart-container {
+       
+        height: 450px;
+        width: calc(100% - 28px);
+        margin: 0 auto 60px auto;
+
+      }
+
+      
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .chart-container {
+        height: 480px;
+        width: 1000px;
+        margin: 0 auto 50px auto;
+        
+    }
+    
+}
+
+@media only screen and (min-width: 1820px) {
+
+    .main-container{
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto 0 auto;
+    }
+
+    .main-container h3{
+
+        margin-top: 10px;
+    
+    }
+    .controls-container{
+        margin: auto;
+        
+    }
+    .chart-container {
+        height: 800px;
+        
+    }
+
+    .param-choice{
+        padding-bottom: 10px;
+     
+    }
+
 }
