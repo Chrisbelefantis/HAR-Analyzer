@@ -77,6 +77,13 @@ function addButtonGroupLogic(optionButtons,allButton){
 
 }
 
+var preferences_button=document.getElementById("pref-button");
+
+preferences_button.addEventListener("click",()=>{
+    
+    $('#preferencesModal').appendTo("body").modal('show');
+})
+
 
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -128,7 +135,7 @@ $.get('../includes/admin/waiting_times.php',{options:JSON.stringify({
         providers: "all"
     })},
     (data)=>{
-        //console.log(data);
+        
         let graphData = JSON.parse(data);
         myChart.data.datasets[0].data = graphData.waitingTimes;
         myChart.data.labels = graphData.hours;

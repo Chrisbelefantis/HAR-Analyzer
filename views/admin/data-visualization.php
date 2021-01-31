@@ -47,7 +47,7 @@
 							<h3 >Visualisation preferences</h3>
 						</div>
 
-						<div id="errorMessage"></div>
+						<div></div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-danger custom" data-dismiss="modal">Close</button>
 							<button type="button" class="btn btn-success custom" id="register">Register</button>
