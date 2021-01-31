@@ -29,6 +29,8 @@ document.getElementById('mail-rptpwd').addEventListener("change",event=>{
         document.getElementById('mail-rptpwd').classList.remove("is-invalid");
     }
 });
+
+
 $("#mail-submit").click(function() {
     var currentPwd = $('#mail-crnpwd').val();
     var newPwd = $('#mail-newpwd').val();

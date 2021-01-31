@@ -17,11 +17,7 @@
 
 ?>
 
-
-
-
 <?php include 'templates/admin/header.php'?>
 
-<h3>Data Visualatitation</h3>
 
 <?php include 'templates/admin/footer.php'?>

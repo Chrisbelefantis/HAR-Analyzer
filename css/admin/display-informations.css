@@ -1,3 +1,41 @@
 h3{
     color: green;
 }
+
+.animation{
+    background:#0B032D10;
+    box-sizing:border-box;
+    border:20px solid white;
+    border-radius:40px;
+}
+
+.main-container{
+    padding: 36px;
+    width: 100%;
+    float: right;
+    height: calc(100vh - 68px);
+    position: scroll;
+    overflow-y: scroll;
+}
+
+label {
+    color:  #0B032D;
+    display: inline-block; 
+    width: 150px; 
+}
+
+thead {
+    background-color:  #0B032D;
+    color: white;
+}
+
+p {
+    color: #0B032D;
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 768px){
+    .main-container{
+        width:calc(100% - 210px);
+    }
+}
