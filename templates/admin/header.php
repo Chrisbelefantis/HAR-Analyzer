@@ -41,7 +41,7 @@
               <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
               <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
           </svg> 
-          Display Basic Informations                              
+          Display Basic Information                              
       </a>
       <a class="nav-link" href="response-times">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
           </svg>
           Response Time Analysis                              
       </a>
-      <a class="nav-link" href="header-analysis">
+      <a class="nav-link" href="headers-analysis">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
           <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -96,7 +96,7 @@
  <li class="nav-item">
     <a class="nav-link" href="display-informations">
         
-        Display Basic Informations                           
+        Display Basic Information                          
     </a>
   </li>
   <li class="nav-item">

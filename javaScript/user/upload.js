@@ -413,8 +413,10 @@ function getUploadData(){
 
     for(let i=0; i<uploadData.length; i++){
 
-        let ipAddress = uploadData[i].serverIPAddress;
+        
 
+
+        let ipAddress = uploadData[i].serverIPAddress;
         //In case there is a IPv6 address
         //they brackets that should be removed
         if(ipAddress[0]==='['){   
