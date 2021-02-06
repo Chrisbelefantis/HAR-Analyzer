@@ -107,7 +107,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="headers-analysis">
-       HTTP Headers Analysis</a>
+       HTTP Headers <br/> Analysis</a>
   </li>
   <a class="nav-link" href="data-visualization">
       Data Visualations</a>

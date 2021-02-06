@@ -19,6 +19,7 @@
   
 
 
+
 .param-choice{
     
     margin-left: auto;
@@ -27,7 +28,7 @@
 }
 
 
-.btn{
+.param-choice .btn{
     font-weight: bolder;
     color: rgba(0,0,0,0.6);
     background-color: #0b032d10;
@@ -41,14 +42,14 @@
     
 }
 
-.btn:hover{
+.param-choice .btn:hover{
     color: white;
     background-color:#0B032D;
     
     
 }
 
-.btn:focus {
+.param-choice .btn:focus {
     outline: none;
     box-shadow: none;
  
@@ -64,13 +65,19 @@
 
 }
 
+.modal-content{
+    padding:0;
+    margin: 0;
+}
+
 .modal-content h4{
     font-weight: 400;
+    
 }
 
 .controls-container{
     padding: 20px;
-
+    
 }
 
 
@@ -106,7 +113,7 @@
     width: fit-content;
     margin: 0 auto 0 auto;
     font-weight: 400;
-box
+    letter-spacing: 3px;
 }
 
 
@@ -117,17 +124,16 @@ box
 }
 
 #close{
-    padding: 2px ;
+   
+    padding:0;
     margin: 0 0 0 0 ;
     background-color: #0b032d10;
-    position: relative;
-    top: 0;
-    left: 0;
     color: rgba(0,0,0,0.6);
     border-style: none;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    transition: ;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 

@@ -40,7 +40,7 @@ transition: 1s;
 }
 
 li {
-	margin-top: 10px;
+	margin-top: 0;
 	list-style-type: none;
     font-size: 17px;
 }
@@ -68,10 +68,15 @@ body {
     color: #0B032D;
     padding-left: 19px;
     padding-top: 5px;
+    margin-bottom: 15px;
 }
 
 
-
+.nav-link .extra-space{
+    position: relative;
+    left: +.5em;
+ 
+}
 
 .topnav a {
 color: #fafafa;
@@ -136,7 +141,10 @@ top: 0;
         display: flex;
         flex-direction: column;
        
-    }
+    }   
+
+  
+
     .navbar-custom li:last-of-type{
         margin-top: auto;
         margin-bottom: 50px;
