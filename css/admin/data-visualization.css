@@ -5,12 +5,25 @@
     position: relative;   
 }
 
-.pref-button{
-    cursor: pointer;
-    position: absolute; 
-    right: 10px;
-    bottom: 10px;
+.scale{
     z-index: 1000;
+    margin: 15px;
+    width: 90%;
+    height: 25px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 25px;
+    left:4%;
+    color: white;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right,hsl(200,100%,50%),hsl(171.5,100%,50%),hsl(142.85,100%,50%),hsl(114.3,100%,50%), hsl(85.71,100%,50%),hsl(57.14,100%,50%), hsl(28.57,100%,50%), hsl(0,100%,50%)) repeat scroll 0% 0%;
+}
+.scale>span{
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-top: 2px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 

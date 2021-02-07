@@ -49,12 +49,12 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-md-12 animation " style="width:auto;">
+    <div class="col-lg-6 col-md-12 animation " style="width:auto;height:auto;">
         <div>
             <canvas id="myChart" style="padding:20px; height:auto;"></canvas>
         </div>
     </div>
-    <div class="col-lg-6 col-md-12 animation "style="width:auto;">
+    <div class="col-lg-6 col-md-12 animation "style="width:auto;height:auto;">
         <div>
             <canvas id="myChartsecond" style="padding:20px; height:auto;"></canvas>
         </div>

@@ -16,7 +16,7 @@
     session_start();
 
     
-    $sql = "SELECT serverLocation, count(*) FROM entries GROUP BY serverLocation";
+    $sql = "SELECT serverLocation, count(*) FROM entries GROUP BY serverLocation ORDER BY count(*) DESC";
    
     $query_result = mysqli_query($conn,$sql);
     
