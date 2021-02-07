@@ -59,6 +59,7 @@ $.get("../includes/admin/load_clients_location.php",(data,status)=>{
         var circle_center=[(Number(element.s_lat)+Number(element.c_lat))/2,(Number(element.s_lng)+Number(element.c_lng))/2];
         var normal_b=[Number(element.s_lat)-circle_center[0],Number(element.s_lng)-circle_center[1]];
         var theta=Math.PI/2 +Math.atan(normal_b[1]/normal_b[0]);
+      
         var cart_c=[Math.abs(r*Math.cos(theta))+circle_center[0], r*Math.sin(theta)+circle_center[1]];
         if(cart_c[0]-element.s_lat>25 ||cart_c[0]-element.c_lat>25)
             {cart_c[0]-=30;}
@@ -66,10 +67,12 @@ $.get("../includes/admin/load_clients_location.php",(data,status)=>{
         var color="hsl("+weight+",100%,50%)"
 
         //add curve
-        if(element.s_lat!=element.c_lat && element.s_lng!=element.c_lng ){
-            var path = L.curve(['M',[element.c_lat,element.c_lng],
+        if(Number(element.s_lat)!==Number(element.c_lat) && Number(element.s_lng)!==Number(element.c_lng) ){
+            
+           
+            var path = L.curve(['M',[Number(element.c_lat),Number(element.c_lng)],
                                 'Q',cart_c,
-                                    [element.s_lat,element.s_lng],
+                                    [Number(element.s_lat),Number(element.s_lng)],
                                 ], 
                             {animate: 1700, color: color }).addTo(mymap).bindPopup("Origin:<br>Latitude:"+element.c_lat+"<br>Longtitude:"+element.c_lng+"<br>Total Requests:"+element.count);;
         }
