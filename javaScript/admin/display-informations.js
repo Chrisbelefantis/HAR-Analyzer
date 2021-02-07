@@ -93,7 +93,7 @@ $.get("../includes/admin/get_contentType.php", function(data) {
     data.forEach(element => {
         if(element.count > 20){
             content_type.push(element.response_contentType);
-            average_age.push((element.avg_age/1000).toFixed(2));
+            average_age.push((element.avg_age/60).toFixed(2));
             colors.push('rgba(11,3,45,'+opacity[counter%2]+')');
             opacity[counter%2]-=0.045;
             counter++;

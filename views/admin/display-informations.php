@@ -63,8 +63,8 @@
 
   <div class="row">
     <div class="col-12 animation">
-      <div style="width:auto; height:auto;">
-            <canvas id="myPieChart" style="margin:50px; height:auto;"></canvas>
+      <div style="width:90%; height:auto;">
+            <canvas id="myPieChart" style="margin:50px; height:auto; width:auto;"></canvas>
       </div>
     </div>
   </div>
