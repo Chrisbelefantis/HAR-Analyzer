@@ -35,8 +35,8 @@
 
     while($row = mysqli_fetch_assoc($query_result ))
     {
-        $request_content_type= strtoupper(explode('/', $row['response_contentType'])[1]);
-
+        // $request_content_type= strtoupper(explode('/', $row['response_contentType'])[1]);
+        $request_content_type= strtoupper($row['response_contentType']);
         array_push($request_content_types, $request_content_type);
         
     }

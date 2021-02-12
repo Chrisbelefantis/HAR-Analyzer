@@ -178,7 +178,7 @@ document.querySelectorAll('.btn').forEach((button)=>{
             let selectedDays = [];
             for(let i=0; i<daysButtons.length-1; i++){
                 if(daysButtons[i].classList.contains('selected')){
-                    selectedDays.push(daysButtons[i].textContent);
+                    selectedDays.push(daysButtons[i].textContent.substring(0,2));
                 }
             }
             options.days = selectedDays;
