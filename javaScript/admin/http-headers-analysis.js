@@ -1,6 +1,5 @@
 var content_type=[];
-var average_ttl=[];
-var count=[];
+var response_ttl=[];
 var provider=[];
 var preferences_button=document.getElementById("pref-button");
 var myPieChart;
@@ -94,31 +93,36 @@ preferences_button.addEventListener("click",()=>{
 $.get("../includes/admin/get_ttls.php", function(data) {
 
     data = JSON.parse(data);
-
+   
 
     data.forEach(element => {
         
         content_type.push(element.response_contentType);
-        average_ttl.push((element.avg_ttl/60).toFixed(2));
-        count.push(element.count);
+        response_ttl.push((element.response_TTL/86400).toFixed(2));
         provider.push(element.provider);
-
         
     });
 
     
-    var min_ttl=Number(average_ttl[average_ttl.length-1]);
-    var max_ttl=Number(average_ttl[0]);
+
+    var min_ttl=Number(response_ttl[response_ttl.length-1]);
+    var max_ttl=Number(response_ttl[0]);
     var ttl_d=(max_ttl-min_ttl)/9;
     var x_axis=[];
+    
     var y_axis=[0,0,0,0,0,0,0,0,0,0];
+
     for(var i=0; i<10; i++){
-        x_axis.push(min_ttl+i*ttl_d);
+
+        left_boundary = parseInt(min_ttl+i*ttl_d);
+        right_boundary = parseInt(min_ttl+ (i+1)*ttl_d-1);
+
+        x_axis.push(String(left_boundary)+' - '+String(right_boundary)+' days');
 
     }
 
-    for(var i=0; i<count.length; i++){
-        y_axis[parseInt((average_ttl[i]-min_ttl)/ttl_d)]+=count[i];
+    for(var i=0; i<response_ttl.length; i++){
+        y_axis[parseInt((response_ttl[i]-min_ttl)/ttl_d)]++;
     }
    
 
@@ -141,6 +145,12 @@ $.get("../includes/admin/get_ttls.php", function(data) {
                     text:' TTL Allocation',
                     fontSize:25,
                     fontColor:'#0B032D'
+                },
+                scales: {
+                    yAxes: {
+                        id: 'Count',
+                        type: 'logarithmic '
+                    }
                 }
             }
         }); 
@@ -149,19 +159,15 @@ $.get("../includes/admin/get_ttls.php", function(data) {
 
 
 function chart_maker(selected_content_types, selected_providers){
-    console.log(content_type)
-    console.log(average_ttl)
-    console.log(provider)
-    console.log(count);
+
     var cad_content_type=[];
-    var cad_average_ttl=[];
-    var cad_count=[];
+    var cad_response_ttl=[];
     var cad_provider=[];
     //cut and dry data of interest
     if(selected_content_types[0]=="all" && selected_providers[0]== "all"){
+
         cad_content_type=content_type;
-        cad_average_ttl=average_ttl;
-        cad_count=count;
+        cad_response_ttl=response_ttl;
         cad_provider=provider;
 
     }else if(selected_providers[0]=="all"){
@@ -171,8 +177,7 @@ function chart_maker(selected_content_types, selected_providers){
             if(selected_content_types.includes(content_type[i])){
                
                 cad_content_type.push(content_type[i]);
-                cad_average_ttl.push(average_ttl[i]);
-                cad_count.push(count[i]);
+                cad_response_ttl.push(response_ttl[i]);
                 cad_provider.push(provider[i]);
             }
         }
@@ -181,8 +186,7 @@ function chart_maker(selected_content_types, selected_providers){
         for(var i=0; i<content_type.length; i++){
             if(selected_providers.includes(provider[i])){
                 cad_content_type.push(content_type[i]);
-                cad_average_ttl.push(average_ttl[i]);
-                cad_count.push(count[i]);
+                cad_response_ttl.push(response_ttl[i]);
                 cad_provider.push(provider[i]);
             }
         }
@@ -192,31 +196,33 @@ function chart_maker(selected_content_types, selected_providers){
         for(var i=0; i<content_type.length; i++){
             if(selected_content_types.includes(content_type[i]) && selected_providers.includes(provider[i])){
                 cad_content_type.push(content_type[i]);
-                cad_average_ttl.push(average_ttl[i]);
-                cad_count.push(count[i]);
+                cad_response_ttl.push(response_ttl[i]);
                 cad_provider.push(provider[i]);
             }
         }
     }
 
-    console.log(cad_average_ttl);
-    console.log(cad_count);
-    var min_ttl=Number(cad_average_ttl[cad_average_ttl.length-1]);
-    var max_ttl=Number(cad_average_ttl[0]);
+   
+    var min_ttl=Number(cad_response_ttl[cad_response_ttl.length-1]);
+    var max_ttl=Number(cad_response_ttl[0]);
     var ttl_d=(max_ttl-min_ttl)/9;
     var x_axis=[];
     var y_axis=[0,0,0,0,0,0,0,0,0,0];
     for(var i=0; i<10; i++){
-        x_axis.push(min_ttl+i*ttl_d);
+
+        left_boundary = parseInt(min_ttl+i*ttl_d);
+        right_boundary = parseInt(min_ttl+ (i+1)*ttl_d-1);
+
+        x_axis.push(String(left_boundary)+' - '+String(right_boundary)+' days');
+
     }
 
-    for(var i=0; i<cad_count.length; i++){
-        y_axis[parseInt((cad_average_ttl[i]-min_ttl)/ttl_d)]+=cad_count[i];
+    for(var i=0; i<cad_response_ttl.length; i++){
+        y_axis[parseInt((cad_response_ttl[i]-min_ttl)/ttl_d)]++;
     }
     
     var ctx = document.getElementById('myTTLChart').getContext('2d');
     myPieChart.data.datasets[0].data = y_axis;
-    console.log(y_axis);
     myPieChart.data.labels = x_axis;
     myPieChart.update();
 }

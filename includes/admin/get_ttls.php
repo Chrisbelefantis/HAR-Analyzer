@@ -2,24 +2,27 @@
 
     class ContentType{
         public $response_contentType;
-        public $avg_ttl;
-        public $count;
+        public $response_TTL;
         public $provider;
 
 
 
-        function set_ContentType($response_contentType,$avg_ttl, $count, $provider){
+        function set_ContentType($response_contentType, $response_TTL, $provider){
             $this->response_contentType = $response_contentType;
-            $this->avg_ttl = $avg_ttl;
-            $this->count = $count;
-            $this->provider=$provider;
+            $this->response_TTL = $response_TTL;
+            $this->provider= $provider;
 
         }
 
     }
 
     require '../db_connection.php';
-    $sql = "SELECT response_contentType,AVG(response_TTL), COUNT(*), provider.name FROM uploads INNER JOIN entries ON entries.upload=uploads.id INNER JOIN provider ON provider.id=uploads.provider WHERE entries.response_TTL IS NOT NULL GROUP BY response_contentType ORDER BY AVG(response_TTL) DESC";
+    $sql = "SELECT response_contentType,response_TTL, provider.name ,`response_hasMinFresh`,
+    `response_hasMaxStale`,`response_	cacheability` FROM uploads 
+    INNER JOIN entries ON entries.upload=uploads.id 
+    INNER JOIN provider ON provider.id=uploads.provider 
+    WHERE entries.response_TTL IS NOT NULL ORDER BY response_TTL DESC";
+
     $stmt = mysqli_stmt_init($conn);
     $array_content_type=array();
 
@@ -34,12 +37,11 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             $ct = $row['response_contentType'];
-            $attl = $row['AVG(response_TTL)'];
-            $count= $row['COUNT(*)'];
+            $rttl = $row['response_TTL'];
             $prov=$row['name'];
 
             $newCT= new ContentType();
-            $newCT->set_ContentType($ct, $attl, $count, $prov);
+            $newCT->set_ContentType($ct, $rttl, $prov);
             array_push($array_content_type, $newCT);
 
         }

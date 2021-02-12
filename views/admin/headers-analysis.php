@@ -35,6 +35,22 @@
         </div>
     </div>
 
+    <div class="row">
+    <div class="col-lg-6 col-md-12 animation " style="width:auto;height:auto;">
+        <div>
+            <canvas id="myChart" style="padding:20px; height:auto;"></canvas>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 col-md-12 animation "style="width:auto;height:auto;">
+        <div>
+            <canvas id="myChartsecond" style="padding:20px; height:auto;"></canvas>
+        </div>
+    </div>      
+  </div>
+
+
+
     <svg class="pref-button" id="pref-button" width="90" height="90" viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg">
       <path id="svg_11" d="m22.69815,23.00616l-11.36345,-0.04928l-7.67967,-3.36756l-2.71047,-7.84394l1.3963,-4.88706l3.12115,-3.61396l3.94251,-1.60164l4.88706,-0.41068l3.73717,1.35524l3.28542,3.44969l1.64271,5.54415c-0.08624,3.80835 -0.17248,7.6167 -0.25873,11.42505z" stroke-opacity="null" stroke-width="null" stroke="null" fill="#ffffff"/>
       <path id="svg_1" d="m12,0a12,12 0 0 0 0,24l12,0l0,-12a12,12 0 0 0 -12,-12zm10,22l-10,0a10,10 0 1 1 10,-10l0,10z" fill="#0b032d"/>
