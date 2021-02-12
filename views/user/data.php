@@ -94,11 +94,15 @@
             <tbody>
               <tr>
                 <td><strong>Date Of Last Upload<strong></td>
-                <td>Something</td>
+                <td id='DateLastUpload'></td>
               </tr>
               <tr>
-                <td><strong>Registrations</strong></td>
-                <td>Something</td>
+                <td><strong>Time Of Last Upload<strong></td>
+                <td id='TimeLastUpload'></td>
+              </tr>
+              <tr>
+                <td><strong>Uploads</strong></td>
+                <td id='numberOfRegistrations'></td>
               </tr>
             </tbody>
           </table>

@@ -128,6 +128,7 @@ $("#username-submit").click(function() {
                 currentUsername : currentUsernameValue
             },
             function(data) {
+
                 $("#Success-usernameMessage").text(data);
                 
                 currentUsernameElement.value = newUsernameValue;
@@ -141,6 +142,18 @@ $("#username-submit").click(function() {
             $("#form-usernameMessage").text("Please check all the fields and try again");
         }
     }
+});
+
+$.get("../includes/user/get_Registrations_user.php", function(data) {
+    console.log(data);
+    document.getElementById("numberOfRegistrations").innerHTML = data;
+});
+
+$.get("../includes/user/get_LastDateUpload.php", function(data) {
+    console.log(data);
+    var updateDateTime = data.split(" ");
+    document.getElementById("DateLastUpload").innerHTML = updateDateTime[0];
+    document.getElementById("TimeLastUpload").innerHTML = updateDateTime[1];
 });
 
 
