@@ -16,6 +16,160 @@
     border-radius:40px;
 }
 
+.pref-button{
+    cursor: pointer;
+    position: absolute; 
+    right: 35px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.param-choice{
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    
+}
+
+.my-btn-group{
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.my-btn-group .btn{
+    border-radius: 0px;
+}
+
+.my-btn-group .btn:first-of-type{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.my-btn-group .btn:last-of-type{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.param-choice .btn{
+    font-weight: bolder;
+    color: rgba(0,0,0,0.6);
+    background-color: #0b032d10;
+    border-color:#0b032d10;
+   
+   
+}
+
+
+.btn.selected{
+    color: white;
+    background-color:#0B032D;
+    
+}
+
+.param-choice .btn:hover{
+    color: white;
+    background-color:#0B032D;
+    
+    
+}
+
+.param-choice .btn:focus {
+    outline: none;
+    box-shadow: none;
+ 
+}
+
+.btn.refresh-btn{
+   
+    font-weight: lighter;
+    color: white;
+    background-color: #0B032D;
+    width: fit-content;
+    margin: 15px auto auto auto;
+
+}
+
+.modal-content{
+    padding:0;
+    margin: 0;
+}
+
+.modal-content h4{
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    background-color: #0b032d10;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #0B032D;
+}
+
+.controls-container{
+    padding: 20px;
+    width: 650px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.chart-title{
+    text-align: center;
+    margin: 0 auto 0 auto;
+    
+    
+}
+
+.chart-samples{
+    margin: auto;
+    font-style: italic;
+}
+
+
+
+.modal-dialog{
+    width: 100%;
+}
+
+#preferencesModal .modal-content{
+    width: fit-content;
+    
+        
+}
+
+.modal-header h2{
+    text-align: center;
+    font-weight: lighter;
+    width: fit-content;
+    margin: 0 auto 0 auto;
+    font-weight: 600;
+    padding-left: 20px;
+    
+}
+
+
+#close:hover{
+
+    background-color: rgba(0, 0, 0, 0.13)
+    
+}
+
+#close{
+   
+    padding:0;
+    margin: 0 0 0 0 ;
+    background-color: #0b032d10;
+    color: rgba(0,0,0,0.85);
+    border-style: none;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
 
 
 @media only screen and (min-width: 768px){
