@@ -142,7 +142,7 @@
     $insert_entries_stmt=array();
     for($i=0; $i<count($inserts_piecies);$i++ ){
         
-        $insert_entries_stmt[$i]="INSERT INTO `entries`( `upload`, `serverLocation`, `timingsWait`, `request_method`, `request_url`, `response_status`, `response_statusTest`, `response_age`, `response_TTL`, `response_contentType`, `response_	cacheability`, `response_isCached`, `response_hasMinFresh`, `response_hasMaxStale`, `day`, `time`) VALUES ".implode(',', $inserts_piecies[$i]);
+        $insert_entries_stmt[$i]="INSERT INTO `entries`( `upload`, `serverLocation`, `timingsWait`, `request_method`, `request_url`, `response_status`, `response_statusTest`, `response_age`, `response_TTL`, `response_contentType`, `response_cacheability`, `response_isCached`, `response_hasMinFresh`, `response_hasMaxStale`, `day`, `time`) VALUES ".implode(',', $inserts_piecies[$i]);
         
         if($conn->query($insert_entries_stmt[$i])===TRUE){
             echo "Done " . $i . PHP_EOL;
