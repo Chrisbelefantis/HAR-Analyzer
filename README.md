@@ -4,7 +4,7 @@ We have developed a complete collection, management and crowdsourced information
 
 # Login Page
 
- - The login page with username and security code is shown below where depending on if the user or administrator logs in, the corresponding functions are displayed.
+- The login page with username and security code is shown below where depending on if the user or administrator logs in, the corresponding functions are displayed.
 
 ![image](https://user-images.githubusercontent.com/60574307/115163506-1e6cc600-a0b2-11eb-97d0-8808ea97b478.png)
 
