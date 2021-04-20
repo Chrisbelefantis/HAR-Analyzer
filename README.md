@@ -71,7 +71,7 @@ the user can change the username / password and see basically statistics for the
     
     d) Connectivity Provider (eg "Wind", "Cosmote" or all).
     
-    ![image](https://user-images.githubusercontent.com/60574307/115402809-71e72d00-a1f4-11eb-93a5-0c08f252b904.png)
+ ![image](https://user-images.githubusercontent.com/60574307/115402809-71e72d00-a1f4-11eb-93a5-0c08f252b904.png)
 
 
 
