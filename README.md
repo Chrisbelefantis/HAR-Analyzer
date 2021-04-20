@@ -54,7 +54,7 @@ the user can change the username / password and see basically statistics for the
 
 ![image](https://user-images.githubusercontent.com/60574307/115401281-e6b96780-a1f2-11eb-80b1-8360608792b3.png)
 
-**Response Time Analysis (object type entries, timings field)**:
+**Response Time Analysis** (object type entries, timings field):
   A configurable diagram with the average response time (Y axis) in each is displayed application per hour of the day [0-24] (X axis). The diagram can be filtered data as follows:
   
     a) Web object type (select one or more CONTENT-TYPE or all).
@@ -64,5 +64,8 @@ the user can change the username / password and see basically statistics for the
     c) HTTP method type on request (select one or more, or all).
     
     d) Connectivity Provider (eg "Wind", "Cosmote" or all).
+    
+    ![image](https://user-images.githubusercontent.com/60574307/115402809-71e72d00-a1f4-11eb-93a5-0c08f252b904.png)
+
 
 
