@@ -85,3 +85,6 @@ the user can change the username / password and see basically statistics for the
       c. Percentage of cacheability directives (public, private, no-cache, no-store) on the total of responses per CONTENT-TYPE (select one or more CONTENT-TYPE or all).
       
 All the above graphs / tables are configured by the provider selection connectivity Connectivity provider (eg "Wind", "Cosmote" or all)
+
+![image](https://user-images.githubusercontent.com/60574307/115404337-ea022280-a1f5-11eb-9e65-493e3af50a98.png)
+
