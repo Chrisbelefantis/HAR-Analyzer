@@ -39,17 +39,18 @@ the user can change the username / password and see basically statistics for the
 
 ## Administrator
 
-1. **Display Basic Information:** The administrator sees relevant information on one page, in tables and / or graphs depicting:
+1. **Display Basic Information:**
+ The administrator sees relevant information on one page, in tables and / or graphs depicting:
 
-  a. The number of registered users.
-  
-  b. The number of entries in the database per type (method) of application.
-  
-  c. The number of entries in the database per response code (status).
-  
-  d. The number of unique domains that exist in the database.
-  
-  e. The number of unique connectivity providers in the database.
+      a) The number of registered users.
+
+      b) The number of entries in the database per type (method) of application.
+
+      c) The number of entries in the database per response code (status).
+
+      d) The number of unique domains that exist in the database.
+
+      e) The number of unique connectivity providers in the database.
 
 ![image](https://user-images.githubusercontent.com/60574307/115401281-e6b96780-a1f2-11eb-80b1-8360608792b3.png)
 
