@@ -39,7 +39,7 @@ the user can change the username / password and see basically statistics for the
 
 ## Administrator
 
-1. **Display Basic Information:**
+**Display Basic Information:**
  The administrator sees relevant information on one page, in tables and / or graphs depicting:
 
      a) The number of registered users.
@@ -54,7 +54,7 @@ the user can change the username / password and see basically statistics for the
 
 ![image](https://user-images.githubusercontent.com/60574307/115401281-e6b96780-a1f2-11eb-80b1-8360608792b3.png)
 
-2. **Response Time Analysis (object type entries, timings field)**:
+**Response Time Analysis (object type entries, timings field)**:
   A configurable diagram with the average response time (Y axis) in each is displayed application per hour of the day [0-24] (X axis). The diagram can be filtered data as follows:
   
     a) Web object type (select one or more CONTENT-TYPE or all).
