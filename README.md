@@ -33,4 +33,6 @@ the user can change the username / password and see basically statistics for the
 
 ![image](https://user-images.githubusercontent.com/60574307/115398534-ec617e00-a1ef-11eb-87d9-2ebb05945f1a.png)
 
+3. **Data visualization:** The user can see on a map the locations of the IPs in which has sent HTTP requests. Specifically, a heatmap is displayed on the map to display the distribution of the number of records related to HTML, PHP, ASP web objects, JSP (or pure domains, without path).
+
 
