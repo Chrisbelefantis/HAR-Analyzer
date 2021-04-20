@@ -90,6 +90,7 @@ All the above graphs / tables are configured by the provider selection connectiv
 
 **Data visualization**: The administrator can see them on a map IPs locations to which it has sent HTTP requests. Specifically, one appears marker per IP, with lines connecting each user's source city with each icon. The thickness of the lines is adjusted according to the number of applications they have made to that IP, normalized to the maximum number made to most popular IP.
 
-![image](https://user-images.githubusercontent.com/60574307/115404798-54b35e00-a1f6-11eb-9aa8-77f5a2c50826.png)
+![image](https://user-images.githubusercontent.com/60574307/115405011-84fafc80-a1f6-11eb-805b-a431a9877334.png)
+
 
 
