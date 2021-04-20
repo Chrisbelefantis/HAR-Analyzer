@@ -25,8 +25,9 @@ the user can change the username / password and see basically statistics for the
 2. Upload data: 
   The user selects a HAR file from his computer. The file will processed locally to delete sensitive data and then the user has two options: 
   
-  a) Upload it to the system or 
-  b) Save the edited file locally.
+    a) Upload it to the system or 
+
+    b) Save the edited file locally.
   
   If the file is uploaded to the system, it will need to be further processed (on the server) of the data to be uploaded, in order to store the desired data with appropriate       format. Also, the IP of the user uploading the file should be "analyzed" so that to automatically discover the user connectivity provider and save the this information in the   database along with the records.
 
