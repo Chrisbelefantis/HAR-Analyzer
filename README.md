@@ -22,7 +22,7 @@ the user can change the username / password and see basically statistics for the
 
 ![image](https://user-images.githubusercontent.com/60574307/115398099-778e4400-a1ef-11eb-9272-c3b6a8c1ac32.png)
 
-2. **Upload data: **
+2. **Upload data:**
   The user selects a HAR file from his computer. The file will processed locally to delete sensitive data and then the user has two options: 
   
     a) Upload it to the system or 
@@ -35,5 +35,6 @@ the user can change the username / password and see basically statistics for the
 
 3. **Data visualization:** The user can see on a map the locations of the IPs in which has sent HTTP requests. Specifically, a heatmap is displayed on the map to display the distribution of the number of records related to HTML, PHP, ASP web objects, JSP (or pure domains, without path).
 
-![image](https://user-images.githubusercontent.com/60574307/115399749-31d27b00-a1f1-11eb-825d-ab1bf71deefd.png)
+![image](https://user-images.githubusercontent.com/60574307/115399911-56c6ee00-a1f1-11eb-8101-1a3c240e8d14.png)
+
 
