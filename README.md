@@ -56,9 +56,13 @@ the user can change the username / password and see basically statistics for the
 
 2.**Response Time Analysis (object type entries, timings field)**:
   A configurable diagram with the average response time (Y axis) in each is displayed application per hour of the day [0-24] (X axis). The diagram can be filtered data as follows:
-    a) Web object type (select one or more CONTENT-TYPE or all)
-    b) Day of the week (Monday - Sunday or all)
-    c) HTTP method type on request (select one or more, or all)
-    d) Connectivity Provider (eg "Wind", "Cosmote" or all)
+  
+    a) Web object type (select one or more CONTENT-TYPE or all).
+    
+    b) Day of the week (Monday - Sunday or all).
+    
+    c) HTTP method type on request (select one or more, or all).
+    
+    d) Connectivity Provider (eg "Wind", "Cosmote" or all).
 
 
