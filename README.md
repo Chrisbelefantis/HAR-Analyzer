@@ -60,7 +60,7 @@ the user can change the username / password and see basically statistics for the
 ![image](https://user-images.githubusercontent.com/60574307/115401281-e6b96780-a1f2-11eb-80b1-8360608792b3.png)
 
 
-**Response Time Analysis** (object type entries, timings field):
+**Response Time Analysis**:
   A configurable diagram with the average response time (Y axis) in each is displayed application per hour of the day [0-24] (X axis). The diagram can be filtered data as follows:
   
     a) Web object type (select one or more CONTENT-TYPE or all).
@@ -74,7 +74,7 @@ the user can change the username / password and see basically statistics for the
  ![image](https://user-images.githubusercontent.com/60574307/115402809-71e72d00-a1f4-11eb-93a5-0c08f252b904.png)
 
 
-**HTTP header analysis** (header objects). The administrator is looking at a page appropriate information, in tables and / or graphs depicting relevant data the use of hidden memories. More specifically:
+**HTTP header analysis**: The administrator is looking at a page appropriate information, in tables and / or graphs depicting relevant data the use of hidden memories. More specifically:
 
       a. Histogram of TTL distribution of web objects in response, by CONTENT-TYPE (select one or more CONTENT-TYPE or all). TTL is the max-age directive (if exists) or   
       calculated based on expires (if any) and modification date of the web object.The number of buckets of the histogram is 10 and its width each bucket is calculated 
@@ -87,4 +87,9 @@ the user can change the username / password and see basically statistics for the
 All the above graphs / tables are configured by the provider selection connectivity Connectivity provider (eg "Wind", "Cosmote" or all)
 
 ![image](https://user-images.githubusercontent.com/60574307/115404337-ea022280-a1f5-11eb-9e65-493e3af50a98.png)
+
+**Data visualization**: The administrator can see them on a map IPs locations to which it has sent HTTP requests. Specifically, one appears marker per IP, with lines connecting each user's source city with each icon. The thickness of the lines is adjusted according to the number of applications they have made to that IP, normalized to the maximum number made to most popular IP.
+
+![image](https://user-images.githubusercontent.com/60574307/115404798-54b35e00-a1f6-11eb-9aa8-77f5a2c50826.png)
+
 
