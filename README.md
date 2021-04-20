@@ -76,7 +76,9 @@ the user can change the username / password and see basically statistics for the
 
 **HTTP header analysis** (header objects). The administrator is looking at a page appropriate information, in tables and / or graphs depicting relevant data the use of hidden memories. More specifically:
 
-      a. Histogram of TTL distribution of web objects in response, by CONTENT-TYPE (select one or more CONTENT-TYPE or all). TTL is the max-age directive (if exists) or    calculated based on expires (if any) and modification date of the web object. The number of buckets of the histogram is 10 and its width each bucket is calculated dynamically according to the recovered values.
+      a. Histogram of TTL distribution of web objects in response, by CONTENT-TYPE (select one or more CONTENT-TYPE or all). TTL is the max-age directive (if exists) or   
+      calculated based on expires (if any) and modification date of the web object.The number of buckets of the histogram is 10 and its width each bucket is calculated 
+      dynamically according to the recovered values.
       
       b. Percentage of max-stale and min-fresh directives on the total number of applications per CONTENTTYPE (select one or more CONTENT-TYPE or all).
       
