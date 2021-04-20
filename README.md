@@ -17,8 +17,8 @@ be at least 8 characters and contain at least one capital letter, a number and a
 
 Once logged in, the user can manage their profile, upload and visualize Har file data.
 
-1. Profile management
-The user can change the username / password and see basically statistics for the data it has uploaded (date of last upload, number of records).
+1. Profile management:
+the user can change the username / password and see basically statistics for the data it has uploaded (date of last upload, number of records).
 
 ![image](https://user-images.githubusercontent.com/60574307/115398099-778e4400-a1ef-11eb-9272-c3b6a8c1ac32.png)
 
