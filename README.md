@@ -37,4 +37,6 @@ the user can change the username / password and see basically statistics for the
 
 ![image](https://user-images.githubusercontent.com/60574307/115399911-56c6ee00-a1f1-11eb-8101-1a3c240e8d14.png)
 
+## Administrator
+
 
